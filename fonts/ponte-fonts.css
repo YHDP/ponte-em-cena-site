@@ -1,0 +1,53 @@
+/* Ponte em Cena — locked typography (self-hosted, SIL OFL 1.1)
+   Wordmark / display: Space Grotesk · Body: Gelasio (Georgia-metric).
+   Audition families pruned 2026-05-15 after the type lock. */
+
+/* Space Grotesk · 400 */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./spacegrotesk-400-normal.woff2) format('woff2');
+}
+/* Space Grotesk · 500 */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(./spacegrotesk-500-normal.woff2) format('woff2');
+}
+/* Space Grotesk · 700 */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(./spacegrotesk-700-normal.woff2) format('woff2');
+}
+
+/* Gelasio · 400 */
+@font-face {
+  font-family: 'Gelasio';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./gelasio-400-normal.woff2) format('woff2');
+}
+/* Gelasio · 600 */
+@font-face {
+  font-family: 'Gelasio';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(./gelasio-600-normal.woff2) format('woff2');
+}
+/* Gelasio · 400 italic */
+@font-face {
+  font-family: 'Gelasio';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./gelasio-400-italic.woff2) format('woff2');
+}

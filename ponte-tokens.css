@@ -1,0 +1,60 @@
+/* Ponte em Cena — Brand Tokens (CSS companion, LOCKED)
+   Source of truth: BRAND-SYSTEM.md. Static artifacts (templates, web, social,
+   reports) link THIS file — zero JS. Variable names match the locked logo
+   sheet so existing markup consumes it unchanged. Pairs with ponte-tokens.js.
+   One link gets fonts + tokens. No Regen values. */
+
+@import "./fonts/ponte-fonts.css";
+
+:root {
+  /* Semantic triad — orange = NL · green = BR · gold = the bridge */
+  --orange: #E85D04;   /* NL voice */
+  --green:  #007F33;   /* BR voice */
+  --gold:   #E0A500;   /* the bridge / encontro */
+  --yellow: #FFDF00;   /* celebratory FILL only — never text */
+
+  /* AA-on-white text variants */
+  --orange-dark: #B8460A;
+  --green-dark:  #005A24;
+  --gold-dark:   #9E7400;   /* also the bronze chord */
+
+  /* Light fills */
+  --orange-light: #FBE3D2;
+  --green-light:  #D6EBDD;
+  --gold-light:   #FBEFCB;
+  --yellow-light: #FFF6C2;
+
+  /* Mid tints */
+  --orange-mid: #F2934F;
+  --green-mid:  #4FA873;
+  --gold-mid:   #EEC766;
+  --yellow-mid: #FFEC66;
+
+  /* Neutrals */
+  --ink:       #1A1A1A;
+  --ink-soft:  #3D3D3D;
+  --ink-muted: #8A857B;
+  --rule:      #E4DFD6;
+  --paper:     #FAF7F2;
+  --white:     #FFFFFF;
+  --border:    rgba(26, 26, 26, 0.13);
+
+  /* Semantic aliases */
+  --nl:     var(--orange);
+  --br:     var(--green);
+  --bridge: var(--gold);
+
+  /* Map-realistic gradient: BR → bridge → NL */
+  --grad-bridge: linear-gradient(90deg, #007F33, #E0A500, #E85D04);
+
+  /* Locked funder spot — never recoloured */
+  --funder-orange: #f16900;
+
+  /* Typography — wordmark/display Space Grotesk · body Gelasio */
+  --font-wordmark: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display:  'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body:     'Gelasio', Georgia, 'Times New Roman', serif;
+
+  /* Logo clear space — ≥ deck height (≈ ¼ of mark height) */
+  --logo-clearspace: 0.25;
+}
