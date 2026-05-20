@@ -149,16 +149,18 @@
     font-family: var(--font-wordmark); font-size: 0.95rem;
     color: var(--ink-muted); }
 
-  /* Apoio — top strip, visible on first paint (canonical "top strip" placement). */
-  .apoio-top { background: var(--white); padding: clamp(12px, 2vw, 18px) 0; }
-  .apoio-top .wrap { display: flex; align-items: center; flex-wrap: wrap;
-    gap: clamp(16px, 3vw, 30px); }
-  .apoio-top .lbl { font-family: var(--font-wordmark); font-weight: 700;
+  /* Apoio — inline under the lede (canonical funder co-brand placement, in-flow). */
+  .hero .apoio-row { display: flex; align-items: center; flex-wrap: wrap;
+    gap: clamp(16px, 3vw, 28px);
+    margin-top: clamp(30px, 4.5vw, 44px);
+    padding-top: clamp(20px, 3vw, 28px);
+    border-top: 1px solid var(--rule); }
+  .hero .apoio-row .lbl { font-family: var(--font-wordmark); font-weight: 700;
     font-size: clamp(0.6rem, 1.1vw, 0.66rem); letter-spacing: 0.18em;
     text-transform: uppercase; color: var(--ink-soft); }
-  .apoio-top img { display: block; width: auto; }
-  .apoio-top .fnd-rijk { height: clamp(22px, 3vw, 30px); }
-  .apoio-top .fnd-200  { height: clamp(28px, 3.6vw, 38px); }
+  .hero .apoio-row img { display: block; width: auto; }
+  .hero .apoio-row .fnd-rijk { height: clamp(22px, 3vw, 30px); }
+  .hero .apoio-row .fnd-200  { height: clamp(28px, 3.6vw, 38px); }
 
   /* ── Footer ────────────────────────────────────────────────────── */
   footer { background: var(--ink); color: rgba(255,255,255,0.7);
@@ -173,14 +175,6 @@
 </head>
 <body>
 
-<aside class="apoio-top" aria-label="Apoio institucional">
-  <div class="wrap">
-    <span class="lbl">Apoio</span>
-    <img class="fnd-rijk" src="assets/nl-rijksoverheid-pt.svg" alt="Reino dos Países Baixos">
-    <img class="fnd-200" src="assets/nl-200anos-pt.png" alt="200 Anos de Amizade Brasil — Países Baixos">
-  </div>
-</aside>
-
 <div class="grad"></div>
 
 <header class="hero">
@@ -190,6 +184,11 @@
     <h1>Ponte em Cena</h1>
     <p class="lede">Uma ponte cultural entre o <strong>Brasil</strong> e os
       <strong>Países Baixos</strong> — construída dos dois lados ao mesmo tempo.</p>
+    <div class="apoio-row" aria-label="Apoio institucional">
+      <span class="lbl">Apoio</span>
+      <img class="fnd-rijk" src="assets/nl-rijksoverheid-pt.svg" alt="Reino dos Países Baixos">
+      <img class="fnd-200" src="assets/nl-200anos-pt.png" alt="200 Anos de Amizade Brasil — Países Baixos">
+    </div>
   </div>
 </header>
 
