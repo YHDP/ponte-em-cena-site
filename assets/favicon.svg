@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Ponte em Cena">
+  <!-- logo104 — truss centered in square canvas. Geometry from brand/logo/ponte-logo-color.svg. -->
+  <g transform="translate(0,62)">
+    <g opacity="0.4" transform="translate(3,1)">
+      <polygon points="20,56 60,56 40,24" fill="#007F33"/>
+      <polygon points="40,24 80,24 60,56" fill="#4FA873"/>
+      <polygon points="60,56 100,56 80,24" fill="#007F33"/>
+      <polygon points="80,24 120,24 100,56" fill="#E0A500"/>
+      <polygon points="100,56 140,56 120,24" fill="#E85D04"/>
+      <polygon points="120,24 160,24 140,56" fill="#F2934F"/>
+      <polygon points="140,56 180,56 160,24" fill="#E85D04"/>
+    </g>
+    <polygon points="20,56 60,56 40,24" fill="#007F33"/>
+    <polygon points="40,24 80,24 60,56" fill="#4FA873"/>
+    <polygon points="60,56 100,56 80,24" fill="#007F33" opacity="0.85"/>
+    <polygon points="100,56 140,56 120,24" fill="#E85D04" opacity="0.85"/>
+    <polygon points="120,24 160,24 140,56" fill="#F2934F"/>
+    <polygon points="140,56 180,56 160,24" fill="#E85D04"/>
+    <polygon points="80,24 120,24 100,56" fill="#E0A500"/>
+    <rect x="20" y="56" width="160" height="5" fill="#1A1A1A"/>
+    <polygon points="42,61 52,61 54,76 40,76" fill="#1A1A1A"/>
+    <polygon points="148,61 158,61 160,76 146,76" fill="#1A1A1A"/>
+  </g>
+</svg>

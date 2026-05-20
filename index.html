@@ -13,6 +13,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Ponte em Cena — uma ponte cultural entre o Brasil e os Países Baixos. Em 2026, uma série de oficinas unindo o Teatro do Oprimido e o Design Thinking holandês.">
 <title>Ponte em Cena — conexão cultural Brasil ⇄ Países Baixos</title>
+
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Ponte em Cena">
+<meta property="og:title" content="Ponte em Cena — conexão cultural Brasil ⇄ Países Baixos">
+<meta property="og:description" content="Uma metodologia de intercâmbio cultural entre o Brasil e os Países Baixos — Teatro do Oprimido encontrando Design Thinking holandês.">
+<meta property="og:url" content="https://ponte-em-cena.com.br/">
+<meta property="og:image" content="https://ponte-em-cena.com.br/assets/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ponte em Cena — Conexões Culturais 2026 — ponte de treliça verde (Brasil) → dourado (encontro) → laranja (Países Baixos)">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ponte em Cena — conexão cultural Brasil ⇄ Países Baixos">
+<meta name="twitter:description" content="Uma metodologia de intercâmbio cultural entre o Brasil e os Países Baixos.">
+<meta name="twitter:image" content="https://ponte-em-cena.com.br/assets/og-image.png">
+
 <link rel="stylesheet" href="ponte-tokens.css">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -128,15 +149,16 @@
     font-family: var(--font-wordmark); font-size: 0.95rem;
     color: var(--ink-muted); }
 
-  .apoio { display: flex; align-items: center; flex-wrap: wrap;
-    gap: clamp(18px, 4vw, 40px);
-    padding-top: clamp(26px, 4vw, 38px); border-top: 1px solid var(--rule); }
-  .apoio .lbl { font-family: var(--font-wordmark); font-weight: 700;
-    font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--ink-soft); }
-  .apoio img { display: block; width: auto; }
-  .apoio .fnd-rijk { height: clamp(30px, 4vw, 40px); }
-  .apoio .fnd-200  { height: clamp(38px, 5vw, 52px); }
+  /* Apoio — top strip, visible on first paint (canonical "top strip" placement). */
+  .apoio-top { background: var(--white); padding: clamp(12px, 2vw, 18px) 0; }
+  .apoio-top .wrap { display: flex; align-items: center; flex-wrap: wrap;
+    gap: clamp(16px, 3vw, 30px); }
+  .apoio-top .lbl { font-family: var(--font-wordmark); font-weight: 700;
+    font-size: clamp(0.6rem, 1.1vw, 0.66rem); letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--ink-soft); }
+  .apoio-top img { display: block; width: auto; }
+  .apoio-top .fnd-rijk { height: clamp(22px, 3vw, 30px); }
+  .apoio-top .fnd-200  { height: clamp(28px, 3.6vw, 38px); }
 
   /* ── Footer ────────────────────────────────────────────────────── */
   footer { background: var(--ink); color: rgba(255,255,255,0.7);
@@ -150,6 +172,14 @@
 </style>
 </head>
 <body>
+
+<aside class="apoio-top" aria-label="Apoio institucional">
+  <div class="wrap">
+    <span class="lbl">Apoio</span>
+    <img class="fnd-rijk" src="assets/nl-rijksoverheid-pt.svg" alt="Reino dos Países Baixos">
+    <img class="fnd-200" src="assets/nl-200anos-pt.png" alt="200 Anos de Amizade Brasil — Países Baixos">
+  </div>
+</aside>
 
 <div class="grad"></div>
 
@@ -167,11 +197,11 @@
   <div class="wrap">
     <div class="eyebrow">O conceito</div>
     <div class="prose" style="margin-bottom: clamp(24px,4vw,40px)">
-      <p>Ponte em Cena reúne artistas <strong>neerlandeses e brasileiros</strong>
-      para atravessar, juntos, as questões que ligam os dois países. O encontro
-      cruza o <strong>Teatro do Oprimido</strong> com métodos holandeses de
-      <strong>Design Thinking</strong>: uma tradição torna visível a relação, a
-      outra torna visível o processo.</p>
+      <p>Ponte em Cena é uma <strong>metodologia de intercâmbio cultural</strong>
+      entre o Brasil e os Países Baixos — uma forma de atravessar, juntos, as
+      questões que ligam os dois países. O encontro cruza o <strong>Teatro do
+      Oprimido</strong> com métodos holandeses de <strong>Design Thinking</strong>:
+      uma tradição torna visível a relação, a outra torna visível o processo.</p>
       <p>O resultado não é um relatório sobre a cultura do outro — é uma
       <strong>agenda compartilhada</strong> que nenhum dos lados teria escrito
       sozinho.</p>
@@ -203,7 +233,7 @@
 
 <section class="partners">
   <div class="wrap">
-    <div class="eyebrow">Realização &amp; apoio</div>
+    <div class="eyebrow">Realização</div>
     <div class="makers">
       <a class="maker-pill" href="https://regenstudio.world" target="_blank" rel="noopener noreferrer">
         <img class="mlogo" src="assets/regen-logo.svg" alt="Regen Studio">
@@ -221,11 +251,6 @@
         </span>
         <span class="mext" aria-hidden="true">↗</span>
       </a>
-    </div>
-    <div class="apoio">
-      <span class="lbl">Apoio</span>
-      <img class="fnd-rijk" src="assets/nl-rijksoverheid-pt.svg" alt="Reino dos Países Baixos">
-      <img class="fnd-200" src="assets/nl-200anos-pt.png" alt="200 Anos de Amizade Brasil — Países Baixos">
     </div>
   </div>
 </section>
