@@ -1,1 +1,5 @@
 .DS_Store
+.env
+.ig-new-token
+node_modules/
+.screenshots/
