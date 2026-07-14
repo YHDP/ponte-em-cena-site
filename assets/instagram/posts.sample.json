@@ -1,54 +1,54 @@
 {
-  "handle": "in.pulsobr",
+  "handle": "ponteemcena",
   "source": "sample",
   "note": "Placeholder fixture for look/copy review before the live Graph API token is wired. Replaced by real data once IG_TOKEN is set. See scripts/README.md.",
   "posts": [
     {
       "id": "sample-1",
       "image": "assets/instagram/sample-1.svg",
-      "permalink": "https://www.instagram.com/in.pulsobr/",
+      "permalink": "https://www.instagram.com/ponteemcena/",
       "caption": "Primeira oficina do Ponte em Cena — Teatro do Oprimido encontra Design Thinking",
-      "alt": "Post de @in.pulsobr no Instagram: primeira oficina do Ponte em Cena",
+      "alt": "Post de @ponteemcena no Instagram: primeira oficina do Ponte em Cena",
       "type": "IMAGE"
     },
     {
       "id": "sample-2",
       "image": "assets/instagram/sample-2.svg",
-      "permalink": "https://www.instagram.com/in.pulsobr/",
+      "permalink": "https://www.instagram.com/ponteemcena/",
       "caption": "Encontro Brasil ⇄ Países Baixos — construindo a ponte dos dois lados",
-      "alt": "Post de @in.pulsobr no Instagram: encontro Brasil e Países Baixos",
+      "alt": "Post de @ponteemcena no Instagram: encontro Brasil e Países Baixos",
       "type": "CAROUSEL_ALBUM"
     },
     {
       "id": "sample-3",
       "image": "assets/instagram/sample-3.svg",
-      "permalink": "https://www.instagram.com/in.pulsobr/",
+      "permalink": "https://www.instagram.com/ponteemcena/",
       "caption": "Bastidores da série de oficinas de 2026",
-      "alt": "Post de @in.pulsobr no Instagram: bastidores da série de oficinas",
+      "alt": "Post de @ponteemcena no Instagram: bastidores da série de oficinas",
       "type": "VIDEO"
     },
     {
       "id": "sample-4",
       "image": "assets/instagram/sample-4.svg",
-      "permalink": "https://www.instagram.com/in.pulsobr/",
+      "permalink": "https://www.instagram.com/ponteemcena/",
       "caption": "O corpo como ferramenta de investigação — Teatro do Oprimido",
-      "alt": "Post de @in.pulsobr no Instagram: o corpo como ferramenta de investigação",
+      "alt": "Post de @ponteemcena no Instagram: o corpo como ferramenta de investigação",
       "type": "IMAGE"
     },
     {
       "id": "sample-5",
       "image": "assets/instagram/sample-5.svg",
-      "permalink": "https://www.instagram.com/in.pulsobr/",
+      "permalink": "https://www.instagram.com/ponteemcena/",
       "caption": "Métodos holandeses de Design Thinking na prática",
-      "alt": "Post de @in.pulsobr no Instagram: métodos holandeses de Design Thinking",
+      "alt": "Post de @ponteemcena no Instagram: métodos holandeses de Design Thinking",
       "type": "IMAGE"
     },
     {
       "id": "sample-6",
       "image": "assets/instagram/sample-6.svg",
-      "permalink": "https://www.instagram.com/in.pulsobr/",
+      "permalink": "https://www.instagram.com/ponteemcena/",
       "caption": "200 anos de amizade — uma agenda compartilhada",
-      "alt": "Post de @in.pulsobr no Instagram: 200 anos de amizade",
+      "alt": "Post de @ponteemcena no Instagram: 200 anos de amizade",
       "type": "IMAGE"
     }
   ]

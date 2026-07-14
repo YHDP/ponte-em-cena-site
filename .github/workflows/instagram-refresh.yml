@@ -1,6 +1,6 @@
 name: Refresh Instagram feed
 
-# Pulls @in.pulsobr's latest posts via the Instagram Graph API (server-side),
+# Pulls @ponteemcena's latest posts via the Instagram Graph API (server-side),
 # bakes self-hosted thumbnails into assets/instagram/, regenerates the static
 # gallery section in index.html, and commits — GitHub Pages then redeploys.
 # Visitors never contact Meta; the only Meta call happens here in CI.

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Ponte em Cena — Instagram → static gallery builder.
 //
-// Pulls @in.pulsobr's latest posts via the Instagram Graph API (server-side,
+// Pulls @ponteemcena's latest posts via the Instagram Graph API (server-side,
 // at BUILD time), downloads each thumbnail into assets/instagram/ (self-hosted),
 // writes assets/instagram/posts.json, and injects a static <section class="ig">
 // into index.html between the IG:START / IG:END markers.
@@ -31,7 +31,7 @@ import { dirname, join } from 'node:path';
 // ── Config ─────────────────────────────────────────────────────────────
 const POST_COUNT     = 6;
 const HASHTAG_FILTER = null;          // e.g. '#ponteemcena' to show only tagged project posts
-const HANDLE         = 'in.pulsobr';
+const HANDLE         = 'ponteemcena';
 const CAPTION_MAX    = 110;
 
 const ROOT     = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -162,7 +162,7 @@ function renderSection(posts) {
     <div class="eyebrow">Nas redes</div>
     <div class="prose" style="margin-bottom: clamp(22px,3.5vw,34px)">
       <p>Acompanhe os bastidores e os encontros do projeto pelo Instagram
-      da <strong>(in)PULSO</strong>.</p>
+      do <strong>Ponte em Cena</strong>.</p>
     </div>
     <div class="ig-grid">
 ${cards}

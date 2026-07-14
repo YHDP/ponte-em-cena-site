@@ -1,6 +1,7 @@
 # Instagram feed — how it works & how to go live
 
-The lander shows the latest posts from **@in.pulsobr** as a **static, self-hosted
+The lander shows the latest posts from the project's own account **@ponteemcena**
+as a **static, self-hosted
 gallery**. Thumbnails are downloaded at build time and served from
 `assets/instagram/`, so a visitor's browser **never contacts Meta** — no Meta
 JavaScript, no cookies, no trackers. The page stays **zero-JS**: the gallery is
@@ -19,30 +20,35 @@ markers.
 ## Modes
 
 - **Fixture (no `IG_TOKEN`)** — renders the placeholder posts. `node scripts/fetch-instagram.mjs`.
-- **Live (`IG_TOKEN` set)** — refreshes the token, fetches @in.pulsobr's real posts, downloads thumbs.
+- **Live (`IG_TOKEN` set)** — refreshes the token, fetches @ponteemcena's real posts, downloads thumbs.
 
 Config lives at the top of `fetch-instagram.mjs`: `POST_COUNT` (6),
 `HASHTAG_FILTER` (`null`; set to `'#ponteemcena'` to show only tagged project
 posts), `HANDLE`.
 
-## Go-live — one-time setup (needs the (in)PULSO account)
+## Go-live — one-time setup
 
-Because the account is the partner's, **(in)PULSO** does steps 1–4 once:
+The feed is the project's own account, so all of it happens on our side — no
+waiting on a partner, and the 60-day token is ours to rotate.
 
-1. **Convert @in.pulsobr to a Business or Creator account** (free, ~30s in
+1. **Convert @ponteemcena to a Business or Creator account** (free, ~30s in
    Instagram → Settings → Account type).
 2. Create a **Meta Developer app** at developers.facebook.com (keep it in
    *Development* mode — **Standard Access** is enough for one's own account; no
    App Review needed).
-3. Add the Instagram product and authorise @in.pulsobr.
+3. Add the Instagram product and authorise @ponteemcena.
 4. Generate a **long-lived access token** (60-day, refreshable) and note the
-   **Instagram user id**.
+   **Instagram user id** (17 digits — this is *not* the app id).
    - Default here uses the **Instagram-Login flow** (`graph.instagram.com`,
      refresh via `ig_refresh_token`) — no Facebook Page required.
    - If you use the **Facebook-Login Graph API** instead, link a Facebook Page
      and set `GRAPH_BASE=https://graph.facebook.com/v21.0`.
 
-Then **Yvo** wires the secrets (GitHub → repo → Settings → Secrets and variables
+The app id / app secret / client token from the Meta app dashboard are **not**
+what this script consumes — they only exist to mint the token in step 4. The app
+secret never leaves the Meta dashboard and never goes in a chat message.
+
+Then wire the secrets (GitHub → repo → Settings → Secrets and variables
 → Actions):
 
 - `IG_TOKEN` — the long-lived token (**required**).
