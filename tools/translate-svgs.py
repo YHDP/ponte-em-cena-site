@@ -111,13 +111,15 @@ T = {
  "internamente": ("internally", "intern"),
  "temas que emergem": ("themes that emerge", "thema's die opkomen"),
  # ── kleuren ────────────────────────────────────────────────────────────
- "Geel": ("Geel", "Geel"), "Blauw": ("Blauw", "Blauw"), "Rood": ("Rood", "Rood"),
- "Groen": ("Groen", "Groen"), "Wit": ("Wit", "Wit"),
- "Oranje": ("Oranje", "Oranje"), "Paars": ("Paars", "Paars"),
- "(amarelo)": ("(yellow)", "(geeldruk)"), "(azul)": ("(blue)", "(blauwdruk)"),
- "(vermelho)": ("(red)", "(rooddruk)"), "(verde)": ("(green)", "(groendruk)"),
- "(branco)": ("(white)", "(witdruk)"), "(laranja)": ("(orange)", "(oranjedruk)"),
- "(roxo)": ("(purple)", "(paarsdruk)"),
+ # Colour names read in the page language; the -druk gloss stays Dutch because
+ # that is the term the literature uses and the one worth carrying across.
+ "Amarelo": ("Yellow", "Geel"), "Azul": ("Blue", "Blauw"), "Vermelho": ("Red", "Rood"),
+ "Verde": ("Green", "Groen"), "Branco": ("White", "Wit"),
+ "Laranja": ("Orange", "Oranje"), "Roxo": ("Purple", "Paars"),
+ "(geeldruk)": ("(geeldruk)", "(geeldruk)"), "(blauwdruk)": ("(blauwdruk)", "(blauwdruk)"),
+ "(rooddruk)": ("(rooddruk)", "(rooddruk)"), "(groendruk)": ("(groendruk)", "(groendruk)"),
+ "(witdruk)": ("(witdruk)", "(witdruk)"), "(oranjedruk)": ("(oranjedruk)", "(oranjedruk)"),
+ "(paarsdruk)": ("(paarsdruk)", "(paarsdruk)"),
  "Poder": ("Power", "Macht"),
  "Planejada": ("Planned", "Gepland"),
  "Recompensa": ("Reward", "Beloning"),
