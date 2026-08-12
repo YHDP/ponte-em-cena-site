@@ -60,7 +60,29 @@
     }
 
     root.classList.add("is-enhanced");
-    select(0);
+
+    /* Deep links. A link to #m-jornal used to land on a panel that select(0)
+       had just hidden, so the browser jumped to a display:none element and
+       nothing moved — on a page full of diagrams and cards that reads as a
+       broken link rather than a closed panel. Open the panel named in the
+       hash instead, and scroll it into view ourselves, because the jump has
+       already happened by the time we un-hide it. */
+    function openFromHash() {
+      var id = (location.hash || "").slice(1);
+      if (!id) return false;
+      for (var i = 0; i < panels.length; i++) {
+        if (panels[i].id === id) {
+          select(i);
+          panels[i].scrollIntoView({ block: "start" });
+          buttons[i].focus({ preventScroll: true });
+          return true;
+        }
+      }
+      return false;
+    }
+
+    if (!openFromHash()) select(0);
+    window.addEventListener("hashchange", openFromHash);
   }
 
   function init() {

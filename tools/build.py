@@ -304,6 +304,13 @@ def render_page(cfg: dict, shell: str, strings: dict, lang: str, page: dict,
         "{{OG_LOCALE}}": cfg["languages"][lang]["ogLocale"],
         "{{BASE}}": cfg["base"],
         "{{P}}": p,
+        # {{L}} is the LANGUAGE root; {{P}} is the SITE root. An in-body link
+        # written as {{P}}metodologia/ resolves to the Portuguese page from
+        # every language, which is exactly how /nl/ and /en/ ended up sending
+        # readers to PT. In-body page links use {{L}}. {{P}} stays right for
+        # assets, for /mapa-agua/ (one shared, untranslated page) and for the
+        # deliberate cross-language link to the PT-only Teatro do Oprimido text.
+        "{{L}}": p + cfg["languages"][lang]["prefix"],
         "{{HOME}}": page_href(cfg, lang, ""),
         "{{CANONICAL}}": page_url(cfg, lang, slug),
         # A noindex page (the 404) advertises neither a canonical nor
