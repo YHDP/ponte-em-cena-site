@@ -344,11 +344,16 @@ def render_page(cfg: dict, shell: str, strings: dict, lang: str, page: dict,
     # to a system sans. Sourced from brand/templates/ponte-deck-3-oficinas.html
     # by rendering the deck and lifting the generated markup, so the site and
     # the deck show the same artwork rather than two hand-kept copies.
+    # Diagrams are translated: tools/translate-svgs.py writes _src/svg/<lang>/.
+    # Prefer the current language, fall back to the PT original. The labels do
+    # real work in these figures, so a diagram left in Portuguese on an English
+    # page is a content bug, not a cosmetic one.
     def inline_svg(m):
-        p = SRC / "svg" / f"{m.group(1)}.svg"
-        if not p.exists():
-            raise SystemExit(f"missing svg: {p.relative_to(ROOT)}")
-        return p.read_text(encoding="utf-8").strip()
+        name = m.group(1)
+        for cand in (SRC / "svg" / lang / f"{name}.svg", SRC / "svg" / f"{name}.svg"):
+            if cand.exists():
+                return cand.read_text(encoding="utf-8").strip()
+        raise SystemExit(f"missing svg: {name}.svg (looked in svg/{lang}/ and svg/)")
     content = re.sub(r"\{\{SVG:([a-z0-9_-]+)\}\}", inline_svg, content)
 
     # Content goes in FIRST so that fragments may use {{P}} for asset paths and
