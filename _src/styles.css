@@ -297,7 +297,7 @@ section { padding: clamp(44px, 7vw, 88px) 0; }
    section reads as six headed blocks. .is-enhanced is added by panels.js only
    after it has successfully wired the tablist, so the collapsed presentation
    can never strand content behind a script that failed to load. */
-.methods__tabs { display: grid; gap: clamp(8px, 1.4vw, 12px);
+.methods__tabs { display: grid; gap: clamp(6px, 0.9vw, 9px);
   grid-template-columns: 1fr; margin-bottom: clamp(16px, 2.4vw, 24px); }
 @media (min-width: 620px) { .methods__tabs { grid-template-columns: repeat(3, 1fr); } }
 
@@ -308,17 +308,17 @@ section { padding: clamp(44px, 7vw, 88px) 0; }
 .methods__head { grid-column: 1 / -1; display: flex; align-items: baseline;
   gap: 10px; flex-wrap: wrap;
   font-family: var(--font-wordmark); font-weight: 700;
-  font-size: clamp(0.95rem, 1.8vw, 1.08rem); color: var(--ink);
-  letter-spacing: -0.01em; margin-top: clamp(14px, 2.2vw, 22px); }
+  font-size: clamp(0.86rem, 1.4vw, 0.95rem); color: var(--ink);
+  letter-spacing: -0.01em; margin-top: clamp(10px, 1.4vw, 14px); }
 .methods__head:first-child { margin-top: 0; }
 .methods__head .n { font-size: 0.68rem; letter-spacing: 0.14em;
   color: var(--gold-text-aa); }
-.methods__head em { font-style: normal; font-weight: 500; font-size: 0.72rem;
-  letter-spacing: 0.13em; text-transform: uppercase; color: var(--green-dark);
-  padding: 3px 9px; border-radius: 999px; background: var(--white);
+.methods__head em { font-style: normal; font-weight: 500; font-size: 0.62rem;
+  letter-spacing: 0.11em; text-transform: uppercase; color: var(--green-dark);
+  padding: 2px 7px; border-radius: 999px; background: var(--white);
   border: 1px solid var(--rule); }
-.m-tab { display: flex; flex-direction: column; gap: 5px; text-align: left;
-  padding: clamp(12px, 1.8vw, 16px) clamp(13px, 2vw, 18px);
+.m-tab { display: flex; flex-direction: column; gap: 2px; text-align: left;
+  padding: clamp(8px, 1.1vw, 11px) clamp(11px, 1.5vw, 14px);
   background: var(--white); border: 1px solid var(--rule);
   border-top: 3px solid var(--rule); border-radius: 10px;
   font-family: var(--font-wordmark); cursor: pointer; color: var(--ink);
@@ -327,10 +327,10 @@ section { padding: clamp(44px, 7vw, 88px) 0; }
 .m-tab:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 .m-tab .side { font-weight: 700; font-size: 0.56rem; letter-spacing: 0.15em;
   text-transform: uppercase; }
-.m-tab .name { font-weight: 700; font-size: clamp(0.96rem, 1.7vw, 1.06rem);
+.m-tab .name { font-weight: 700; font-size: clamp(0.9rem, 1.4vw, 0.98rem);
   letter-spacing: -0.01em; }
-.m-tab .use { font-family: var(--font-body); font-size: 0.82rem;
-  color: var(--ink-muted-aa); line-height: 1.4; }
+.m-tab .use { font-family: var(--font-body); font-size: 0.75rem;
+  color: var(--ink-muted-aa); line-height: 1.3; }
 .m-tab.br { border-top-color: var(--green); }
 .m-tab.nl { border-top-color: var(--orange); }
 .m-tab.br .side { color: var(--green-dark); }

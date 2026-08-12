@@ -47,7 +47,27 @@
       panel.setAttribute("aria-labelledby", btn.id);
       btn.addEventListener("click", function () {
         /* Clicking the open one closes it, so the grid can return to rest. */
-        select(btn.getAttribute("aria-expanded") === "true" ? -1 : i);
+        var opening = btn.getAttribute("aria-expanded") !== "true";
+        select(opening ? i : -1);
+        /* The panel renders BELOW the whole card grid. With seven cards that
+           is far enough down that on a laptop the answer opens off-screen and
+           the click reads as doing nothing. Bring it into view, but only when
+           it actually is out of view, so a click on a panel you can already
+           see does not yank the page. */
+        if (!opening) return;
+        var panel = panels[i];
+        var r = panel.getBoundingClientRect();
+        var headroom = 90;                      /* the sticky header */
+        if (r.top < headroom || r.top > window.innerHeight - 80) {
+          var reduce = window.matchMedia
+            && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          var y = window.pageYOffset + r.top - headroom;
+          if (window.scrollTo && !reduce) {
+            window.scrollTo({ top: y, behavior: "smooth" });
+          } else {
+            window.scrollTo(0, y);
+          }
+        }
       });
     });
 
