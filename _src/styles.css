@@ -182,6 +182,13 @@ section { padding: clamp(44px, 7vw, 88px) 0; }
   margin-bottom: clamp(18px, 3vw, 30px); }
 .eyebrow::before { content: ""; width: 26px; height: 4px; border-radius: 2px;
   background: var(--gold); flex: none; }
+/* Boal's term is a proper name, so it leads and the translation glosses it,
+   once per page on first mention. Muted and in the wordmark face so the gloss
+   reads as an aside rather than as part of the sentence's argument. */
+.xlate { color: var(--ink-muted-aa); font-family: var(--font-wordmark);
+  font-weight: 500; font-size: 0.86em; white-space: nowrap; }
+@media (max-width: 460px) { .xlate { white-space: normal; } }
+
 /* Shared centre line.
    The reading measure lived on .prose p (62ch), so every paragraph hugged the
    LEFT edge of .wrap while figures, twin cards and panels filled its full
