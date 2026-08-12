@@ -1,0 +1,169 @@
+{
+  "_comment": [
+    "Build config for tools/build.py. Single source of truth for the site's",
+    "structure, per-language metadata and the JSON-LD entity graph.",
+    "Slugs are IDENTICAL across languages on purpose: assets/js/i18n.js derives",
+    "the switcher URL by stripping and re-adding the /en/ or /nl/ prefix, so a",
+    "page must live at the same path in every language. PT is the default and",
+    "lives at the root, so x-default points at PT (Regen's 'x-default is always",
+    "English' rule is Regen-specific and does not transfer to a PT-default site)."
+  ],
+  "base": "https://ponte-em-cena.com.br",
+  "default_lang": "pt",
+  "languages": {
+    "pt": {
+      "htmlLang": "pt-BR",
+      "hreflang": "pt-BR",
+      "ogLocale": "pt_BR",
+      "prefix": "",
+      "label": "PT"
+    },
+    "en": {
+      "htmlLang": "en",
+      "hreflang": "en",
+      "ogLocale": "en_GB",
+      "prefix": "en/",
+      "label": "EN"
+    },
+    "nl": {
+      "htmlLang": "nl",
+      "hreflang": "nl",
+      "ogLocale": "nl_NL",
+      "prefix": "nl/",
+      "label": "NL"
+    }
+  },
+  "_analytics_comment": [
+    "First-party analytics. assets/js/tracker.js posts to our own Supabase Edge",
+    "Function, which is the SAME deployment regenstudio.world uses — events carry",
+    "a `site` discriminator, so this is configuration rather than new backend.",
+    "Setting `endpoint` here does two things at build time: emits the tracker",
+    "script tag, and adds the origin to each page's CSP connect-src. Keeping both",
+    "on one switch means the script can never ship without the CSP that allows it.",
+    "Remove this block to strip analytics from every page in one edit.",
+    "Supabase is a third party and is disclosed as a sub-processor on /privacidade/."
+  ],
+  "analytics": {
+    "endpoint": "https://uemspezaqxmkhenimwuf.supabase.co/functions/v1/private-track-report-event",
+    "site": "ponte"
+  },
+  "_planned_comment": "Languages declared but not yet written. The switcher shows them greyed and inert; move a code out of here once its pages exist.",
+  "planned_languages": [],
+  "nav": [
+    "metodologia",
+    "oficinas",
+    "sobre",
+    "contato"
+  ],
+  "pages": [
+    {
+      "slug": "",
+      "out": "index.html",
+      "priority": "1.0",
+      "changefreq": "monthly"
+    },
+    {
+      "slug": "metodologia",
+      "out": "metodologia/index.html",
+      "priority": "0.9",
+      "changefreq": "monthly"
+    },
+    {
+      "slug": "oficinas",
+      "out": "oficinas/index.html",
+      "priority": "0.9",
+      "changefreq": "monthly"
+    },
+    {
+      "slug": "teatro-do-oprimido",
+      "out": "teatro-do-oprimido/index.html",
+      "priority": "0.8",
+      "changefreq": "yearly"
+    },
+    {
+      "slug": "diagnosticar",
+      "out": "oficinas/diagnosticar/index.html",
+      "priority": "0.8",
+      "changefreq": "monthly"
+    },
+    {
+      "slug": "gerar",
+      "out": "oficinas/gerar/index.html",
+      "priority": "0.7",
+      "changefreq": "monthly"
+    },
+    {
+      "slug": "sobre",
+      "out": "sobre/index.html",
+      "priority": "0.7",
+      "changefreq": "yearly"
+    },
+    {
+      "slug": "contato",
+      "out": "contato/index.html",
+      "priority": "0.6",
+      "changefreq": "yearly"
+    },
+    {
+      "slug": "privacidade",
+      "out": "privacidade/index.html",
+      "priority": "0.3",
+      "changefreq": "yearly"
+    },
+    {
+      "slug": "404",
+      "out": "404.html",
+      "priority": "0.0",
+      "changefreq": "yearly"
+    }
+  ],
+  "organization": {
+    "name": "Ponte em Cena",
+    "description": "Metodologia de intercâmbio cultural entre o Brasil e os Países Baixos, cruzando o Teatro do Oprimido com métodos holandeses de design.",
+    "foundingDate": "2026",
+    "areaServed": [
+      "BR",
+      "NL"
+    ],
+    "member": [
+      {
+        "name": "Regen Studio",
+        "url": "https://regenstudio.world",
+        "role": "liderança NL"
+      },
+      {
+        "name": "(in)PULSO",
+        "url": "https://inpulso.art.br/",
+        "role": "liderança BR"
+      }
+    ],
+    "funder": {
+      "name": "Consulado-Geral do Reino dos Países Baixos em São Paulo",
+      "alternateName": "Conexões Culturais 2026 · 200 Anos de Amizade Brasil–Países Baixos"
+    },
+    "sameAs": [
+      "https://www.instagram.com/ponteemcena/"
+    ]
+  },
+  "_glossary_comment": [
+    "DefinedTermSet is the AI-readability payload that matters most for this",
+    "site: a methodology project wants its vocabulary citable. Mirrors the",
+    "pattern regenstudio-website uses for regulatory glossaries.",
+    "Terms are authored per language in _src/strings/<lang>.json."
+  ],
+  "glossary": [
+    "espect-ator",
+    "curinga",
+    "cena-modelo",
+    "imagem-real-desejada",
+    "dinamizacao",
+    "sessao-generativa",
+    "camada-tacita",
+    "caderno-sensibilizacao",
+    "cor-ausente",
+    "paradoxo",
+    "campo",
+    "quadro",
+    "linha-de-captura"
+  ]
+}

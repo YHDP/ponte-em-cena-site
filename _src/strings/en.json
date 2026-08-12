@@ -1,0 +1,149 @@
+{
+  "_comment": "English lives under /en/. Slugs stay identical to PT — assets/js/i18n.js derives the switcher URL by stripping and re-adding the prefix, so a page must sit at the same path in every language. Keys under ui.* map to {{S_*}} placeholders in shell.html.",
+  "ui": {
+    "skip": "Skip to content",
+    "navLabel": "Main navigation",
+    "apoio": "Supported by",
+    "apoioLabel": "Institutional support",
+    "alt200": "200 Years of Friendship Brazil — Netherlands",
+    "altRijk": "Kingdom of the Netherlands",
+    "footerMeta": "Cultural Connections 2026 · Supported by the Embassy and Consulate-General of the Kingdom of the Netherlands",
+    "footerNav": "Footer links",
+    "updated": "Last updated:",
+    "ogImageAlt": "Ponte em Cena — Cultural Connections 2026 — truss bridge running green (Brazil) to gold (the meeting point) to orange (Netherlands)",
+    "glossaryName": "Method vocabulary — Ponte em Cena",
+    "credit": "Site by Regen Studio"
+  },
+  "nav": {
+    "metodologia": "Methodology",
+    "oficinas": "Workshops",
+    "sobre": "About",
+    "contato": "Contact",
+    "teatro-do-oprimido": "Theatre of the Oppressed",
+    "privacidade": "Privacy",
+    "diagnosticar": "Diagnose",
+    "gerar": "Generate"
+  },
+  "people": [
+    {
+      "id": "isaac",
+      "name": "Isaac Medeiros",
+      "jobTitle": "Actor, theatre teacher and Curinga",
+      "affiliation": "(in)PULSO"
+    },
+    {
+      "id": "yvo",
+      "name": "Yvo Hunink",
+      "jobTitle": "Design thinking specialist",
+      "affiliation": "Regen Studio"
+    }
+  ],
+  "pages": {
+    "": {
+      "title": "Ponte em Cena — cultural exchange Brazil ⇄ Netherlands",
+      "ogTitle": "Ponte em Cena — cultural exchange Brazil ⇄ Netherlands",
+      "description": "Ponte em Cena is a cultural exchange methodology between Brazil and the Netherlands, crossing Augusto Boal's Theatre of the Oppressed with Dutch design methods. A series of workshops through 2026.",
+      "ogDescription": "A cultural exchange methodology between Brazil and the Netherlands. Theatre of the Oppressed meeting Dutch design."
+    },
+    "metodologia": {
+      "title": "Methodology — Theatre of the Oppressed and Dutch design | Ponte em Cena",
+      "ogTitle": "The method: Brazilian theatre as the engine of a Dutch design process",
+      "description": "The foundations of the method: Augusto Boal's Theatre of the Oppressed (Newspaper Theatre, Image Theatre, Legislative Theatre) and the Dutch reflective layer — Context Mapping, Kleurendenken and Frame Creation.",
+      "ogDescription": "Boal meets Delft: how theatre becomes the generative session and Dutch design becomes the lens."
+    },
+    "oficinas": {
+      "title": "The three workshops — diagnose, generate, decide | Ponte em Cena",
+      "ogTitle": "Three workshops, three movements",
+      "description": "Diagnose, generate, decide. Three workshops crossing Augusto Boal's Theatre of the Oppressed with Dutch design methods. The subject of each cycle is chosen together with the Consulate.",
+      "ogDescription": "Diagnose, generate, decide. The movement defines the workshop; the subject is chosen with the Consulate."
+    },
+    "sobre": {
+      "title": "About the project — Cultural Connections 2026 | Ponte em Cena",
+      "ogTitle": "About Ponte em Cena",
+      "description": "Who runs Ponte em Cena, how the project came about, and what two hundred years of Brazilian-Dutch friendship have to do with a rehearsal room in São Paulo.",
+      "ogDescription": "Regen Studio and (in)PULSO, supported by the Consulate-General of the Kingdom of the Netherlands in São Paulo."
+    },
+    "contato": {
+      "title": "Contact | Ponte em Cena",
+      "ogTitle": "Get in touch with Ponte em Cena",
+      "description": "How to reach Ponte em Cena — to join a workshop, propose a partnership, or find out more about the method.",
+      "ogDescription": "To take part, propose a partnership, or find out more about the method."
+    },
+    "404": {
+      "noindex": true,
+      "title": "Page not found | Ponte em Cena",
+      "ogTitle": "Page not found",
+      "description": "This page does not exist, or it has moved."
+    },
+    "privacidade": {
+      "title": "Privacy — what we collect and what we do not | Ponte em Cena",
+      "ogTitle": "Privacy at Ponte em Cena",
+      "description": "What this site collects, what it does not, and how we handle the material produced in workshops. No cookies, no third-party tracker. LGPD and GDPR.",
+      "ogDescription": "No cookies, no third-party tracker. What we collect, and what happens to workshop material."
+    },
+    "diagnosticar": {
+      "title": "Workshop 01 · Diagnose — Newspaper Theatre and the crossed reading",
+      "ogTitle": "Diagnose: reading the same story from both sides",
+      "description": "The first Ponte em Cena workshop. Two news reports on the same subject, one from each country, read in parallel through Newspaper Theatre, Context Mapping and Kleurendenken."
+    },
+    "gerar": {
+      "title": "Workshop 02 · Generate — Forum Theatre and the reframe",
+      "ogTitle": "Generate: staging the deadlock, then reframing it",
+      "description": "The second Ponte em Cena workshop. A deadlock staged, an audience that intervenes, and the Frame Creation step that asks which lever nobody reached for."
+    }
+  },
+  "glossary": {
+    "espect-ator": {
+      "name": "Spect-actor",
+      "description": "The person watching also acts: steps into the scene, replaces the protagonist and tries another route. The figure the whole method is named after."
+    },
+    "curinga": {
+      "name": "Curinga",
+      "description": "The facilitator. Guides without teaching which reading is the right one, and makes sure no single perspective takes over the room."
+    },
+    "cena-modelo": {
+      "name": "Model scene",
+      "description": "The scene showing a problem that does not resolve. It is played a second time so the audience can interrupt it."
+    },
+    "imagem-real-desejada": {
+      "name": "Real image and desired image",
+      "description": "Two sculptures made from the bodies in the group: the situation as it is, and as they wish it were. What has to change sits between the two."
+    },
+    "dinamizacao": {
+      "name": "Dynamisation",
+      "description": "Setting a still image in motion, to see which forces it holds and where it tends to go."
+    },
+    "sessao-generativa": {
+      "name": "Generative session",
+      "description": "In Context Mapping, the exercise that reaches what interviews cannot. In Ponte em Cena, theatre is that session."
+    },
+    "camada-tacita": {
+      "name": "Tacit and latent layers",
+      "description": "What people know without knowing they know it, and what they have not yet put into words. The two deepest layers of the Delft model."
+    },
+    "caderno-sensibilizacao": {
+      "name": "Sensitising booklet",
+      "description": "Material sent out days before the workshop so the group arrives already observing their own lives. Thin homework, thick collage."
+    },
+    "cor-ausente": {
+      "name": "The absent colour",
+      "description": "In Kleurendenken, the route to change that nobody reached for. Usually more diagnostic than the dominant colour."
+    },
+    "paradoxo": {
+      "name": "Paradox",
+      "description": "In Frame Creation, the formulation that jams the problem: we need X, but X prevents Y. Step 2 of the nine."
+    },
+    "campo": {
+      "name": "Field",
+      "description": "Step 4: the wider terrain of actors, values and forces around the problem. In Ponte em Cena these are bodies in the field, not a map."
+    },
+    "quadro": {
+      "name": "Frame",
+      "description": "Step 6, the pivot: the new framing from which different solutions become possible."
+    },
+    "linha-de-captura": {
+      "name": "Capture line",
+      "description": "The sentence recording each Forum Theatre intervention: tried [action] by appealing to [value, actor or lever]. Then you ask which lever nobody reached for."
+    }
+  }
+}

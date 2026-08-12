@@ -1,0 +1,203 @@
+<header class="page-head">
+  <div class="wrap">
+    <div class="kicker">Privacy</div>
+    <h1>Wat we verzamelen, en wat niet</h1>
+    <p class="lede">Geen cookies, geen tracker van derden, geen formulier. Deze
+      pagina beschrijft wat er werkelijk gebeurt. Verandert de praktijk, dan
+      verandert de pagina mee.</p>
+  </div>
+</header>
+
+<section data-section="tres-situacoes">
+  <div class="wrap">
+    <h2 class="eyebrow">Drie situaties</h2>
+    <div class="prose">
+      <p>Wat we verwerken hangt volledig af van hoe je bij ons komt. Begin bij de
+      situatie die de jouwe is.</p>
+
+      <h2>1. Je hebt alleen de site bezocht</h2>
+      <p>We verzamelen niets dat jou identificeert. Er wordt geen cookie
+      geschreven, geen trackingpixel geladen, geen identificator over sites heen
+      aangemaakt. We meten publiek in geaggregeerde vorm, waarbij het IP-adres
+      wordt gehasht met een salt die dagelijks roteert. Daardoor is dezelfde
+      persoon van de ene dag op de andere niet te herkennen. Er is geen
+      individuele registratie van jou om in te zien, te corrigeren of te
+      verwijderen: die ontstaat niet.</p>
+      <p><strong>Subverwerkers in deze situatie:</strong> Supabase (Europese
+      Unie) en GitHub Pages (Verenigde Staten).</p>
+
+      <h2>2. Je hebt ons geschreven</h2>
+      <p>We ontvangen wat je stuurde, op het adres dat je gebruikte. Er staat
+      geen formulier op de site, juist zodat er geen dienst van derden tussen jou
+      en ons zit. We bewaren het bericht zolang de zaak loopt en de bijbehorende
+      wettelijke termijn duurt.</p>
+
+      <h2>3. Je deed mee aan een workshop</h2>
+      <p>Dit is de situatie met de meeste gegevens, en daarom die we het
+      zorgvuldigst beschrijven, inclusief wat nog niet is vastgelegd.</p>
+      <p>In een workshop ontstaat materiaal: collages, scènes, aantekeningen en,
+      waar toestemming is gegeven, foto's en opnames. Dat materiaal legt mensen
+      vast: hun lichaam, hun stem, hun verhaal.</p>
+      <p>De workshops worden uitgevoerd door <strong>(in)PULSO — Comunicação
+      Viva</strong>, dat de relatie met de deelnemende groepen onderhoudt, samen
+      met <strong>Regen Studio</strong>, verantwoordelijk voor de productie en de
+      methodische documentatie. <strong>De toestemming wordt vóór de sessie
+      opgehaald door de organisatie die de groep herbergt</strong>, en meedoen
+      zonder gefotografeerd of opgenomen te worden kan altijd. Wie zich later
+      bedenkt, kan vragen het materiaal terug te trekken.</p>
+      <p>Voor deelnemers <strong>onder de 18</strong> vragen foto, opname en
+      beeldgebruik toestemming van de ouder of voogd. Dat is onze eigen keuze,
+      strenger dan het wettelijk minimum. Zie de paragraaf over kinderen en
+      jongeren.</p>
+      <p>Voor publicatie (site, rapport, presentatie) is het materiaal
+      standaard geanonimiseerd. Herkenbaar in beeld komen, of met naam geciteerd
+      worden, vraagt een aparte en uitdrukkelijke toestemming, los van de
+      toestemming om mee te doen.</p>
+      <blockquote>
+        <p><strong>Wat nog niet is vastgelegd.</strong> De schriftelijke
+        afspraak tussen (in)PULSO en Regen Studio over de omgang met dit
+        materiaal wordt opgesteld en is nog niet ondertekend. Tot die tijd spreekt
+        deze pagina voor wat <strong>Regen Studio</strong> verwerkt: deze site en
+        de publieksmeting ervan. Over workshopmateriaal beschrijven we hierboven
+        de praktijk die we volgen, en behandelen we alles terughoudend:
+        standaard geanonimiseerd, geen herkenbare publicatie. Zodra de afspraak
+        is ondertekend, benoemt deze pagina wie waarvoor instaat.</p>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="concept" data-section="analytics">
+  <div class="wrap">
+    <h2 class="eyebrow">Hoe we publiek meten</h2>
+    <div class="prose">
+      <p>De site gebruikt een <strong>eigen</strong> meetscript, hier gehost, dat
+      gebeurtenissen naar onze eigen functie op Supabase (Europese Unie) stuurt.
+      Het is geen Google Analytics en geen product van derden, en er wordt niets
+      gedeeld voor advertenties.</p>
+
+      <blockquote>
+        <p>Je browser stuurt <em>paginapad + soort gebeurtenis</em> → de server
+        hasht je IP met een <strong>salt die elke dag roteert</strong> → de ruwe
+        gebeurtenissen worden na <strong>48 uur</strong> gewist; alleen de
+        geaggregeerde totalen blijven.</p>
+      </blockquote>
+
+      <h3>Precies wat elke gebeurtenis vastlegt</h3>
+      <p>Paginapad; soort gebeurtenis (paginaweergave, scrolldiepte op
+      25/50/75/100%, een klik op een gemarkeerd element, of het verlaten van de
+      pagina); het herkomstdomein, als je van buiten de site komt; de vorige
+      pagina, als de navigatie intern was; de tijdzone van de browser, gebruikt
+      om een globale landcode af te leiden; en een robotmarkering, als het bezoek
+      op een crawler lijkt.</p>
+      <p>Bij klikken leggen we alleen het label van het aangeklikte element vast
+      en de sectie waarin het staat. Bij het verlaten van de pagina de
+      verblijfsduur in milliseconden. <strong>Je IP-adres wordt nooit als zodanig
+      opgeslagen</strong>, en de identificatie<em>string</em> van de browser
+      evenmin.</p>
+
+      <h3>Opslag in je browser</h3>
+      <p>Geen cookies. Geen <code>localStorage</code>. Twee sleutels in
+      <code>sessionStorage</code>, allebei beperkt tot het open tabblad en gewist
+      zodra je het sluit: <code>_rt_prev_page</code>, met het pad van de vorige
+      pagina, en <code>_ponte_lang_bar</code>, dat onthoudt dat je de taalmelding
+      hebt weggeklikt zodat hij niet terugkomt.</p>
+
+      <h3>Grondslag</h3>
+      <p>Gerechtvaardigd belang: LGPD art. 7, IX in samenhang met art. 10, en AVG
+      art. 6(1)(f). Omdat we geen cookies schrijven en geen ruw IP bewaren, hangt
+      deze meting niet af van voorafgaande toestemming. Daarom toont de site geen
+      cookiebanner: er valt niets toe te stemmen.</p>
+    </div>
+  </div>
+</section>
+
+<section data-section="suboperadores">
+  <div class="wrap">
+    <h2 class="eyebrow">Subverwerkers en doorgifte</h2>
+    <div class="prose">
+      <h3>Supabase · Europese Unie</h3>
+      <p>De database en serverfunctie die de publieksgebeurtenissen ontvangen.
+      Gegevens gehost in de Europese Unie (Stockholm, Zweden).</p>
+
+      <h3>GitHub Pages (Microsoft) · Verenigde Staten</h3>
+      <p>Statische hosting van de site. GitHub bewaart namens ons geen
+      persoonsgegevens; zoals elke webserver verwerkt het het verzoek dat je
+      browser doet om de pagina te ontvangen.</p>
+
+      <h3>Brazilië ⇄ Europese Unie</h3>
+      <p>Gegevens vanuit Brazilië naar een Europese server sturen is een
+      internationale doorgifte. Sinds <strong>26 januari 2026</strong> erkent de
+      ANPD de Europese Unie als jurisdictie met een passend beschermingsniveau
+      (Resolução CD/ANPD nº 32/2026), met een wederkerig besluit van de Europese
+      Commissie. Doorgifte tussen Brazilië en de Europese Unie is daarmee vrij:
+      er zijn geen modelcontractbepalingen of aanvullende waarborgen nodig.</p>
+    </div>
+  </div>
+</section>
+
+<section class="concept" data-section="criancas-adolescentes">
+  <div class="wrap">
+    <h2 class="eyebrow">Kinderen en jongeren</h2>
+    <div class="prose">
+      <p>Een deel van de workshops draait met groepen jongeren. Het loont precies
+      te zijn over wat de wet zegt, want dit onderwerp wordt meestal verkeerd
+      samengevat.</p>
+      <p>Artikel 14 van de LGPD eist <strong>specifieke en in het oog springende
+      toestemming van ten minste één ouder of wettelijk vertegenwoordiger</strong>
+      voor het verwerken van gegevens van <strong>kinderen</strong>, door de wet
+      gedefinieerd als jonger dan 12. <strong>Jongeren</strong> van 12 tot 18
+      hebben getrapte rechten, en de regelgeving van de ANPD over
+      wilsbekwaamheid in die groep is nog niet gepubliceerd. De LGPD legt geen
+      digitale leeftijdsgrens vast zoals de AVG dat doet.</p>
+      <p>In de praktijk leunen we niet op die grens. Voor elke deelnemer onder de
+      18 vragen foto, opname en beeldgebruik toestemming van de ouder of voogd,
+      vóór de sessie opgehaald door de organisatie die de groep herbergt. Dat is
+      onze eigen keuze, strenger dan het wettelijk minimum, en dat blijft zo,
+      wat de regelgeving uiteindelijk ook bepaalt.</p>
+      <p>Op elke leeftijd volgt de verwerking het belang van de deelnemer, en
+      krijgt hij of zij in eenvoudige, toegankelijke taal te horen wat er in de
+      sessie gebeurt.</p>
+    </div>
+  </div>
+</section>
+
+<section data-section="direitos">
+  <div class="wrap">
+    <h2 class="eyebrow">Je rechten</h2>
+    <div class="prose">
+      <p>Je kunt bevestiging van verwerking vragen, inzage, correctie van
+      onvolledige of verouderde gegevens, anonimisering of verwijdering,
+      overdraagbaarheid, informatie over met wie we delen, en intrekking van
+      toestemming. Onder de AVG gelden de gelijkwaardige rechten, waaronder
+      bezwaar en beperking van de verwerking.</p>
+      <p>Schrijf naar
+      <a href="mailto:contato@ponte-em-cena.com.br">contato@ponte-em-cena.com.br</a>
+      en zeg wat je vraagt. <strong>We antwoorden binnen 15 dagen</strong>, de
+      termijn uit art. 19 van de LGPD. De Braziliaanse wet kent geen verlenging,
+      dus hanteren we dezelfde termijn ook voor verzoeken onder de AVG, die
+      ruimer zou zijn.</p>
+      <p>Verzoeken over workshopmateriaal gaan naar (in)PULSO, dat de relatie met
+      de deelnemende groepen onderhoudt. Je hoeft dat niet te weten om te vragen:
+      schrijf naar hetzelfde adres, wij sturen het door.</p>
+      <p>Ben je niet tevreden, dan kun je klagen bij de <strong>ANPD</strong>
+      (Autoridade Nacional de Proteção de Dados, Brazilië) of bij de
+      <strong>Autoriteit Persoonsgegevens</strong> (Nederland).</p>
+    </div>
+  </div>
+</section>
+
+<section class="concept" data-section="alteracoes">
+  <div class="wrap">
+    <h2 class="eyebrow">Wijzigingen</h2>
+    <div class="prose">
+      <p>Deze pagina wordt bijgewerkt op het moment dat de praktijk verandert,
+      nooit daarna. De datum van de laatste wijziging staat in de voettekst. Het
+      project loopt tot december 2026; als het afloopt, publiceren we hier wat er
+      met het geproduceerde materiaal gebeurt.</p>
+      <p>Verantwoordelijk voor deze pagina is <strong>Regen Studio</strong>, dat
+      de site beheert. Vragen, verzoeken en klachten komen binnen op het adres
+      hierboven en gaan naar wie in elk geval verantwoordelijk is.</p>
+    </div>
+  </div>
+</section>

@@ -1,53 +1,43 @@
 /* Ponte em Cena — locked typography (self-hosted, SIL OFL 1.1)
    Wordmark / display: Space Grotesk · Body: Gelasio (Georgia-metric).
-   Audition families pruned 2026-05-15 after the type lock. */
 
-/* Space Grotesk · 400 */
+   Both families ship as VARIABLE fonts with a wght axis, so each is declared
+   ONCE with a weight RANGE. Declaring a single font-weight value against a
+   variable file tells the browser the face is static at that weight, so it
+   never varies the axis: the file's default instance renders instead and any
+   heavier weight is faked. That was the bug here until 2026-08-10 — three
+   @font-face rules (400/500/700) all pointed at the same Space Grotesk file,
+   whose default instance is 300 ("Space Grotesk Light"), so the locked
+   wordmark weight 700 rendered as Light with synthetic bold, and the browser
+   downloaded the same file three times. Same shape for Gelasio 400/600.
+
+   font-display: optional on the two preloaded faces — no FOUT, no layout
+   shift. The italic is not preloaded and is used sparingly, so it takes swap;
+   Gelasio is Georgia-metric, which makes that swap effectively invisible. */
+
+/* Space Grotesk · variable wght 300–700 · display + wordmark */
 @font-face {
   font-family: 'Space Grotesk';
   font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(./spacegrotesk-400-normal.woff2) format('woff2');
-}
-/* Space Grotesk · 500 */
-@font-face {
-  font-family: 'Space Grotesk';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(./spacegrotesk-500-normal.woff2) format('woff2');
-}
-/* Space Grotesk · 700 */
-@font-face {
-  font-family: 'Space Grotesk';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(./spacegrotesk-700-normal.woff2) format('woff2');
+  font-weight: 300 700;
+  font-display: optional;
+  src: url(./spacegrotesk-var.woff2) format('woff2');
 }
 
-/* Gelasio · 400 */
+/* Gelasio · variable wght 400–700 · body */
 @font-face {
   font-family: 'Gelasio';
   font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(./gelasio-400-normal.woff2) format('woff2');
+  font-weight: 400 700;
+  font-display: optional;
+  src: url(./gelasio-var.woff2) format('woff2');
 }
-/* Gelasio · 600 */
-@font-face {
-  font-family: 'Gelasio';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url(./gelasio-600-normal.woff2) format('woff2');
-}
-/* Gelasio · 400 italic */
+
+/* Gelasio · italic (static 400) */
 @font-face {
   font-family: 'Gelasio';
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url(./gelasio-400-italic.woff2) format('woff2');
+  src: url(./gelasio-italic.woff2) format('woff2');
 }

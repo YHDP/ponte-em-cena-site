@@ -1,0 +1,103 @@
+# Ponte em Cena
+
+> Metodologia de intercâmbio cultural entre o Brasil e os Países Baixos, que
+> cruza o Teatro do Oprimido de Augusto Boal com métodos holandeses de design
+> (Context Mapping, Kleurendenken, Frame Creation). Realizada em 2026 pela
+> (in)PULSO — Comunicação Viva (São Paulo) e pelo Regen Studio (Países Baixos),
+> com apoio do Consulado-Geral do Reino dos Países Baixos em São Paulo, no
+> marco dos 200 anos de relações diplomáticas entre os dois países.
+> Idioma principal: português do Brasil.
+
+## A ideia central
+
+O teatro brasileiro é usado COMO técnica de sessão generativa dentro de um
+playbook holandês de design. Não é uma apresentação de duas culturas lado a
+lado: é uma prática em que os dois métodos operam sobre o mesmo problema. O
+Teatro do Oprimido alcança a camada tácita da experiência — o que as pessoas
+sabem, sentem e sonham — que entrevistas e observação não alcançam. A camada
+holandesa entra depois do corpo, nunca antes, e dá linguagem ao que o exercício
+produziu.
+
+O produto de uma oficina não é um relatório sobre a cultura do outro. É uma
+agenda compartilhada que nenhum dos lados teria escrito sozinho.
+
+## Vocabulário do método
+
+- **Espect-ator** — no Teatro do Oprimido, quem assiste também age: entra na
+  cena, substitui personagens, testa alternativas.
+- **Curinga** — o facilitador que conduz o processo sem ensinar qual
+  interpretação está correta.
+- **Teatro-Jornal** — transforma notícias e discursos em ações teatrais, para
+  investigar o que o enquadramento omite.
+- **Teatro-Imagem** — o corpo como linguagem principal; imagens estáticas ou em
+  movimento no lugar de palavras.
+- **Teatro Legislativo** — desenvolvido por Boal como vereador no Rio de
+  Janeiro (1993–1996); aproxima teatro e construção de políticas públicas.
+- **Context Mapping** — Froukje Sleeswijk Visser e Pieter Jan Stappers, TU
+  Delft; artigo fundador em CoDesign 1(2), 2005.
+- **Kleurendenken** — as cinco cores da mudança, de Léon de Caluwé e Hans
+  Vermaak, em *Leren Veranderen* (Boom, 1999; ed. revista 2019).
+- **Frame Creation** — Kees Dorst, *Frame Innovation* (MIT Press, 2015);
+  metodologia de nove passos para reformular problemas.
+
+## As três oficinas
+
+O assunto de cada oficina é **definido em conjunto com o Consulado-Geral** antes
+do ciclo. A proposta aprovada prevê três possibilidades: comunicação cultural,
+água e resiliência, e duzentos anos adiante. O que não muda com o tema é o
+movimento e o par de métodos, e é isso que define cada oficina.
+
+1. **Diagnosticar** — Teatro-Jornal × Context Mapping + Kleurendenken. Duas
+   notícias sobre o mesmo assunto, uma de cada país, lidas em paralelo. O grupo
+   responde com o corpo antes de responder com palavras, e depois nomeia o que
+   cada enquadramento deixou de fora. Não exige holandeses na sala: a Holanda
+   entra pelo jornal. Em piloto em 2026.
+2. **Gerar** — Teatro Fórum × Frame Creation. Um impasse encenado e uma plateia
+   que pode interromper. Cada intervenção vira uma linha de captura, e a
+   pergunta decisiva vem depois: a que alavanca ninguém apelou? Desenhada, à
+   procura de anfitrião.
+3. **Decidir** — Teatro Legislativo com participação diplomática. A autoridade
+   entra como participante horizontal e o que o grupo produz é encaminhável. A
+   camada holandesa está em co-desenho com o Consulado.
+
+## Quem realiza
+
+- **(in)PULSO — Comunicação Viva** (São Paulo, desde 2022), liderança
+  brasileira, dirigida por Isaac Medeiros. <https://inpulso.art.br/>
+- **Regen Studio** (Países Baixos), liderança neerlandesa, dirigido por Yvo
+  Hunink. <https://regenstudio.world>
+- **Apoio:** Consulado-Geral do Reino dos Países Baixos em São Paulo, programa
+  Conexões Culturais 2026.
+
+## Páginas do site
+
+- [Início](https://ponte-em-cena.com.br/): o que é o projeto, em uma página.
+- [Metodologia](https://ponte-em-cena.com.br/metodologia/): fundamentos do
+  Teatro do Oprimido e da camada holandesa, com as fontes acadêmicas.
+- [As três oficinas](https://ponte-em-cena.com.br/oficinas/): o arco
+  diagnosticar → gerar → decidir e o que cada sessão produz.
+- [Sobre](https://ponte-em-cena.com.br/sobre/): como o projeto nasceu, quem
+  faz, licenciamento.
+- [Contato](https://ponte-em-cena.com.br/contato/): como trazer uma oficina
+  para um grupo.
+- [Privacidade](https://ponte-em-cena.com.br/privacidade/): o que o site
+  coleta, e como o material das oficinas é tratado.
+
+## Licenciamento e citação
+
+A metodologia é co-autoral das duas organizações e publicada sob
+**CC BY-NC-SA 4.0**: reuso e adaptação permitidos para fins não comerciais, com
+atribuição e sob a mesma licença. Ao citar, atribua a "Ponte em Cena
+((in)PULSO e Regen Studio)" e indique <https://ponte-em-cena.com.br>.
+
+## Tecnologia do site
+
+HTML estático, sem cookies, sem rastreador de terceiros, sem fontes de CDN e
+sem formulário. A medição de audiência é um script próprio que envia eventos
+para uma função própria hospedada na União Europeia; o IP é transformado em
+hash com um sal que gira diariamente e os eventos brutos são apagados em 48
+horas. Detalhes em <https://ponte-em-cena.com.br/privacidade/>.
+
+## Contato
+
+contato@ponte-em-cena.com.br · Instagram <https://www.instagram.com/ponteemcena/>

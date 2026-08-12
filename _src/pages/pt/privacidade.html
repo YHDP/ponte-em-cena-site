@@ -1,0 +1,202 @@
+<header class="page-head">
+  <div class="wrap">
+    <div class="kicker">Privacidade</div>
+    <h1>O que coletamos, e o que não coletamos</h1>
+    <p class="lede">Sem cookies, sem rastreador de terceiros, sem formulário.
+      Esta página descreve o que realmente acontece — se a prática mudar, a
+      página muda junto.</p>
+  </div>
+</header>
+
+<section data-section="tres-situacoes">
+  <div class="wrap">
+    <h2 class="eyebrow">Três situações</h2>
+    <div class="prose">
+      <p>O que tratamos depende inteiramente de como você chega até nós. Comece
+      pela situação que é a sua.</p>
+
+      <h2>1. Você só visitou o site</h2>
+      <p>Não coletamos nada que identifique você. Nenhum cookie é gravado,
+      nenhum pixel de rastreamento é carregado, nenhum identificador
+      entre sites é criado. Medimos audiência de forma agregada, com o endereço
+      IP transformado em hash usando um sal que gira diariamente — o que impede
+      reconhecer a mesma pessoa de um dia para o outro. Não existe registro
+      individual seu para acessar, corrigir ou excluir: ele não é criado.</p>
+      <p><strong>Suboperadores nesta situação:</strong> Supabase (União
+      Europeia) e GitHub Pages (Estados Unidos).</p>
+
+      <h2>2. Você nos escreveu</h2>
+      <p>Recebemos o que você mandou, no endereço que você usou. Não há
+      formulário no site justamente para não colocar um serviço de terceiros
+      entre você e nós. Guardamos a mensagem enquanto durar o assunto e o prazo
+      legal correspondente.</p>
+
+      <h2>3. Você participou de uma oficina</h2>
+      <p>Esta é a situação que envolve mais dados, e por isso a que descrevemos
+      com mais cuidado — inclusive sobre o que ainda não está formalizado.</p>
+      <p>Numa oficina são produzidos materiais: colagens, cenas, anotações e —
+      quando há autorização — fotografias e gravações. Esse material registra
+      pessoas: seus corpos, suas vozes, suas histórias.</p>
+      <p>As oficinas são realizadas pela <strong>(in)PULSO — Comunicação
+      Viva</strong>, que mantém a relação com os grupos participantes, em
+      parceria com o <strong>Regen Studio</strong>, responsável pela produção e
+      pela documentação metodológica. A <strong>autorização é colhida antes da
+      sessão pela organização que acolhe o grupo</strong>, e é sempre possível
+      participar sem ser fotografado ou gravado. Quem muda de ideia depois pode
+      pedir a retirada do material.</p>
+      <p>Para participantes <strong>menores de 18 anos</strong>, fotografia,
+      gravação e uso de imagem dependem de autorização do responsável. É uma
+      decisão nossa, mais restritiva do que o mínimo legal — veja a seção sobre
+      crianças e adolescentes.</p>
+      <p>Para publicação — site, relatório, apresentação — o material é
+      anonimizado por padrão. Aparecer identificado, ou ser citado com o próprio
+      nome, exige uma autorização separada e explícita, diferente da autorização
+      para participar.</p>
+      <blockquote>
+        <p><strong>O que ainda não está formalizado.</strong> O acordo escrito
+        entre a (in)PULSO e o Regen Studio sobre o tratamento desse material
+        está em elaboração e ainda não foi assinado. Enquanto isso, esta página
+        responde pelo que o <strong>Regen Studio</strong> trata: este site e a
+        sua medição de audiência. Sobre o material das oficinas, descrevemos
+        acima a prática que seguimos, e tratamos tudo de forma restritiva —
+        anonimizado por padrão, sem publicação identificada. Quando o acordo
+        estiver assinado, esta página passa a nomear quem responde pelo quê.</p>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="concept" data-section="analytics">
+  <div class="wrap">
+    <h2 class="eyebrow">Como medimos audiência</h2>
+    <div class="prose">
+      <p>O site usa um script de medição <strong>próprio</strong>, hospedado
+      aqui mesmo, que envia eventos para a nossa própria função no Supabase
+      (União Europeia). Não é Google Analytics nem qualquer produto de
+      terceiros, e nada é compartilhado para publicidade.</p>
+
+      <blockquote>
+        <p>Seu navegador envia <em>caminho da página + tipo de evento</em> →
+        o servidor transforma seu IP em hash com um <strong>sal que gira todo
+        dia</strong> → os eventos brutos são apagados em <strong>48
+        horas</strong>; só os totais agregados permanecem.</p>
+      </blockquote>
+
+      <h3>Exatamente o que cada evento registra</h3>
+      <p>Caminho da página; tipo de evento (visualização de página, profundidade
+      de rolagem em 25/50/75/100%, clique num elemento marcado, ou saída da
+      página); domínio de origem, quando você veio de fora do site; a página
+      anterior, quando a navegação foi interna; fuso horário do navegador, usado
+      para derivar um código de país aproximado; e uma marcação de robô, quando
+      o acesso parece vir de um rastreador.</p>
+      <p>Nos cliques registramos apenas o rótulo do elemento clicado e a seção
+      em que ele está. Na saída da página, o tempo de permanência em
+      milissegundos. <strong>O seu endereço IP nunca é armazenado como tal</strong>, e a
+      <em>string</em> de identificação do navegador também não.</p>
+
+      <h3>Armazenamento no seu navegador</h3>
+      <p>Nenhum cookie. Nenhum <code>localStorage</code>. Duas chaves em
+      <code>sessionStorage</code>, ambas restritas à aba aberta e apagadas
+      quando você a fecha: <code>_rt_prev_page</code>, que guarda o caminho da
+      página anterior, e <code>_ponte_lang_bar</code>, que lembra que você
+      dispensou o aviso de idioma para não mostrá-lo de novo.</p>
+
+      <h3>Base legal</h3>
+      <p>Legítimo interesse: LGPD art. 7º, IX combinado com o art. 10, e GDPR
+      art. 6(1)(f). Como não gravamos cookies nem armazenamos IP bruto, esta
+      medição não depende de consentimento prévio, e por isso o site não exibe
+      banner de cookies: não haveria o que consentir.</p>
+    </div>
+  </div>
+</section>
+
+<section data-section="suboperadores">
+  <div class="wrap">
+    <h2 class="eyebrow">Suboperadores e transferências</h2>
+    <div class="prose">
+      <h3>Supabase · União Europeia</h3>
+      <p>Banco de dados e função de servidor que recebem os eventos de
+      audiência. Dados hospedados na União Europeia (Estocolmo, Suécia).</p>
+
+      <h3>GitHub Pages (Microsoft) · Estados Unidos</h3>
+      <p>Hospedagem estática do site. Nenhum dado pessoal é armazenado pela
+      GitHub em nosso nome; como qualquer servidor web, ela processa o pedido
+      que seu navegador faz para receber a página.</p>
+
+      <h3>Brasil ⇄ União Europeia</h3>
+      <p>Enviar dados do Brasil para um servidor europeu é uma transferência
+      internacional. Desde <strong>26 de janeiro de 2026</strong>, a ANPD
+      reconhece a União Europeia como jurisdição de nível adequado de proteção
+      (Resolução CD/ANPD nº 32/2026), com decisão recíproca da Comissão
+      Europeia. Transferências entre Brasil e União Europeia são, portanto,
+      livres: não dependem de cláusulas-padrão contratuais nem de outras
+      salvaguardas adicionais.</p>
+    </div>
+  </div>
+</section>
+
+<section class="concept" data-section="criancas-adolescentes">
+  <div class="wrap">
+    <h2 class="eyebrow">Crianças e adolescentes</h2>
+    <div class="prose">
+      <p>Parte das oficinas acontece com grupos de jovens. Vale a pena ser
+      preciso sobre o que a lei diz, porque o assunto costuma ser resumido de
+      forma errada.</p>
+      <p>O art. 14 da LGPD exige <strong>consentimento específico e em destaque
+      de pelo menos um dos pais ou do responsável legal</strong> para o
+      tratamento de dados de <strong>crianças</strong>, que a lei define como
+      menores de 12 anos. <strong>Adolescentes</strong> — de 12 a 18 — têm
+      direitos graduados, e a regulamentação da ANPD sobre a capacidade de
+      consentimento nessa faixa ainda não foi publicada. A LGPD não fixa uma
+      idade digital de consentimento como faz o GDPR.</p>
+      <p>Na prática, não dependemos dessa fronteira. Para qualquer participante
+      menor de 18 anos, fotografia, gravação e uso de imagem exigem autorização
+      do responsável, colhida pela organização que acolhe o grupo antes da
+      sessão. É uma decisão nossa, mais restritiva do que o mínimo legal, e
+      permanece assim independentemente do que a regulamentação vier a dizer.</p>
+      <p>Em qualquer idade, o tratamento observa o melhor interesse do
+      participante, e a informação sobre o que acontece na sessão é dada em
+      linguagem simples e acessível.</p>
+    </div>
+  </div>
+</section>
+
+<section data-section="direitos">
+  <div class="wrap">
+    <h2 class="eyebrow">Seus direitos</h2>
+    <div class="prose">
+      <p>Você pode pedir confirmação de tratamento, acesso, correção de dados
+      incompletos ou desatualizados, anonimização ou eliminação, portabilidade,
+      informação sobre com quem compartilhamos, e revogação do consentimento.
+      Sob o GDPR valem os direitos equivalentes, incluindo oposição e limitação
+      do tratamento.</p>
+      <p>Escreva para
+      <a href="mailto:contato@ponte-em-cena.com.br">contato@ponte-em-cena.com.br</a>
+      dizendo qual é o pedido. <strong>Respondemos em até 15 dias</strong>, que
+      é o prazo do art. 19 da LGPD. A lei brasileira não admite prorrogação, e
+      por isso adotamos o mesmo prazo também para pedidos feitos sob o GDPR,
+      que seria mais folgado.</p>
+      <p>Pedidos sobre material de oficina são encaminhados à (in)PULSO, que
+      mantém a relação com os grupos participantes. Você não precisa saber disso
+      para pedir: escreva para o mesmo endereço e nós encaminhamos.</p>
+      <p>Se não ficar satisfeito, pode reclamar à
+      <strong>ANPD</strong> (Autoridade Nacional de Proteção de Dados, Brasil)
+      ou à <strong>Autoriteit Persoonsgegevens</strong> (Países Baixos).</p>
+    </div>
+  </div>
+</section>
+
+<section class="concept" data-section="alteracoes">
+  <div class="wrap">
+    <h2 class="eyebrow">Alterações</h2>
+    <div class="prose">
+      <p>Esta página é atualizada no mesmo momento em que a prática muda, nunca
+      depois. A data da última atualização está no rodapé. O projeto vai até
+      dezembro de 2026; quando terminar, publicaremos aqui o que acontece com o
+      material produzido.</p>
+      <p>Quem responde por esta página é o <strong>Regen Studio</strong>, que
+      opera o site. Dúvidas, pedidos e reclamações chegam pelo endereço acima e
+      são encaminhados a quem for responsável em cada caso.</p>
+    </div>
+  </div>
+</section>

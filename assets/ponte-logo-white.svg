@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 84" role="img" aria-label="Ponte em Cena">
+  <g opacity="0.3" transform="translate(3,1)">
+    <polygon points="20,56 60,56 40,24" fill="#fff"/><polygon points="60,56 100,56 80,24" fill="#fff"/>
+    <polygon points="120,24 160,24 140,56" fill="#fff"/>
+  </g>
+  <polygon points="20,56 60,56 40,24" fill="#fff"/><polygon points="40,24 80,24 60,56" fill="#fff" opacity="0.65"/>
+  <polygon points="60,56 100,56 80,24" fill="#fff" opacity="0.78"/>
+  <polygon points="100,56 140,56 120,24" fill="#fff" opacity="0.78"/>
+  <polygon points="120,24 160,24 140,56" fill="#fff" opacity="0.65"/><polygon points="140,56 180,56 160,24" fill="#fff"/>
+  <polygon points="80,24 120,24 100,56" fill="#fff"/>
+  <rect x="20" y="56" width="160" height="5" fill="#fff"/>
+  <polygon points="42,61 52,61 54,76 40,76" fill="#fff"/><polygon points="148,61 158,61 160,76 146,76" fill="#fff"/>
+</svg>

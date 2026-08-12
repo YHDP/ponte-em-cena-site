@@ -1,0 +1,615 @@
+/* Ponte em Cena — shared stylesheet for every generated page.
+   Brand values come from ponte-tokens.css (LOCKED); never hard-code a hex or
+   a font stack here. External rather than inlined per page so 18 pages share
+   one cached file. */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --maxw: 1080px;
+
+  /* Darkened gold for SMALL text only.
+     BRAND-SYSTEM.md's WCAG table lists gold #9E7400 on white as AA, but it
+     measures 4.24:1 on white and 3.97:1 on paper — both under the 4.5:1 that
+     normal-size text needs. The eyebrow, card numbers and pill roles are all
+     ~10-11px, so they need the darker value; #916B00 measures 4.88 on white
+     and 4.56 on paper. The brand token itself is untouched and stays correct
+     for large text. Same idea as regenstudio-website's published table of
+     darkened brand-colour variants. */
+  --gold-text-aa: #916B00;
+
+  /* Same problem, second token. --ink-muted #8A857B measures 3.43:1 on paper
+     and 3.67:1 on white, so it fails AA wherever it carries running text
+     (figure captions, the sourced-credit lines). #757169 measures 4.55 and
+     4.86. The brand token stays as-is for non-text use such as rules and
+     glyphs; this variant is for words a reader has to read. */
+  --ink-muted-aa: #757169;
+}
+html { scroll-behavior: smooth; }
+html, body { overflow-x: hidden; max-width: 100%; }
+body { background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); line-height: 1.6;
+  overflow-wrap: break-word; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; }
+
+/* overflow-safe container: max-width + auto margins + padding-inline.
+   With box-sizing:border-box the padding can never push past 100%, so no
+   horizontal overflow at any viewport. Section backgrounds stay full-bleed;
+   only the content is inset. */
+.wrap { max-width: var(--maxw); margin-inline: auto;
+  padding-inline: clamp(16px, 5vw, 40px); }
+a { color: var(--green-dark); }
+
+/* In-body links are quiet by default: near body colour, carried by an
+   underline rather than by hue, and warming to green only on interaction.
+   The underline colour is --ink-muted-aa (4.55:1) and NOT --rule, which
+   measures 1.24:1 against paper — invisible, and the underline is the only
+   non-colour cue that this is a link at all. Text itself is --ink-soft at
+   10.16:1, so quiet does not mean faint. */
+.prose a, .m-panel .origin a, figure.diagram figcaption a {
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-decoration-color: var(--ink-muted-aa);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: color .15s, text-decoration-color .15s; }
+.prose a:hover, .prose a:focus-visible,
+.m-panel .origin a:hover, .m-panel .origin a:focus-visible {
+  color: var(--green-dark); text-decoration-color: var(--green); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+/* Skip link — first focusable element on the page. */
+.skip-link { position: absolute; left: -9999px; top: 0; z-index: 999;
+  background: var(--ink); color: #fff; padding: 12px 20px;
+  font-family: var(--font-wordmark); font-weight: 700; font-size: 0.9rem;
+  text-decoration: none; }
+.skip-link:focus { left: 0; }
+
+/* signature gradient rule — BR → bridge → NL */
+.grad { height: 5px; width: 100%;
+  background: linear-gradient(90deg,#007F33,#E0A500,#E85D04); }
+
+/* ── Site header ─────────────────────────────────────────────────── */
+/* The header mark is navigation chrome, deliberately small. The co-brand
+   hierarchy is settled in the home hero, where the project mark sits above the
+   funder marks and visibly leads them. */
+/* Sticky. The pages are long now — /metodologia/ runs several thousand pixels
+   — so the nav travels along. No scroll-shadow script: the background is fully
+   opaque and the 1px rule is enough separation, which keeps this CSS-only.
+   Anything with an id that can be jumped to needs scroll-margin-top below, or
+   the jump lands underneath this bar. */
+.site-head { background: var(--paper); border-bottom: 1px solid var(--rule);
+  position: sticky; top: 0; z-index: 50; }
+:target, .vocab .term, .m-panel, .fundamento h3 { scroll-margin-top: 84px; }
+.site-head__in { display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding-block: 14px; flex-wrap: wrap; }
+.site-head__brand { display: inline-flex; align-items: center; gap: 11px;
+  text-decoration: none; color: var(--ink); }
+.site-head__brand img { height: 34px; width: auto; display: block; }
+.site-head__brand span { font-family: var(--font-wordmark); font-weight: 700;
+  font-size: 1.02rem; letter-spacing: -0.01em; }
+.site-nav { display: flex; align-items: center; gap: clamp(10px, 2vw, 22px); }
+.nav__links { list-style: none; display: flex; flex-wrap: wrap;
+  align-items: center; gap: clamp(10px, 2vw, 22px); }
+.nav__links a { font-family: var(--font-wordmark); font-weight: 500;
+  font-size: 0.88rem; text-decoration: none; color: var(--ink-soft);
+  padding-block: 4px; border-bottom: 2px solid transparent; }
+.nav__links a:hover, .nav__links a:focus-visible { color: var(--ink);
+  border-bottom-color: var(--gold); }
+.nav__links a[aria-current="page"] { color: var(--ink); font-weight: 700;
+  border-bottom-color: var(--gold); }
+.nav__actions { display: flex; align-items: center; }
+
+/* Language switcher — injected by assets/js/i18n.js, styled here.
+   Deliberately a BORDERED CONTROL rather than three letters trailing the nav.
+   The first version rendered correctly and was still unfindable: at 0.8rem in
+   muted grey, directly after the last nav link, it read as more navigation.
+   A globe, a surface and a border make it recognisable as a control before
+   any of the letters are read. */
+.lang-switcher { display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--font-wordmark); font-size: 0.82rem;
+  margin-left: clamp(8px, 1.6vw, 18px);
+  padding: 5px 11px 5px 9px;
+  background: var(--white); border: 1px solid var(--rule); border-radius: 999px; }
+.lang-switcher__globe { width: 15px; height: 15px; flex: none;
+  color: var(--ink-muted-aa); }
+.lang-switcher__link { text-decoration: none; color: var(--ink-soft);
+  letter-spacing: 0.06em; padding: 2px 4px; border-radius: 5px; }
+.lang-switcher__link:hover, .lang-switcher__link:focus-visible {
+  color: var(--ink); background: var(--paper); outline: none; }
+.lang-switcher__link--active { color: var(--ink); font-weight: 700;
+  background: var(--paper); box-shadow: inset 0 0 0 1px var(--rule); }
+/* Planned but not yet built. Visible so the multilingual intent reads
+   immediately, inert so nobody lands on a 404. --ink-muted-aa keeps it at
+   4.55:1 — greyed is not a licence to fail contrast. */
+.lang-switcher__link--planned { color: var(--ink-muted-aa); cursor: default;
+  text-decoration: line-through; text-decoration-thickness: 1px;
+  text-decoration-color: var(--rule); }
+
+/* Language suggestion bar — shown only when the browser language differs from
+   the page and that language exists. Never a redirect. */
+.langbar { background: var(--ink); color: #fff; }
+.langbar__in { display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  padding-block: 10px; font-family: var(--font-wordmark); font-size: 0.86rem; }
+.langbar a { color: #fff; font-weight: 700; text-decoration: underline;
+  text-decoration-color: rgba(255,255,255,0.5); text-underline-offset: 2px; }
+.langbar button { margin-left: auto; background: none; border: 0; cursor: pointer;
+  color: rgba(255,255,255,0.75); font-family: var(--font-wordmark);
+  font-size: 0.8rem; padding: 4px 8px; border-radius: 6px; }
+.langbar button:hover, .langbar button:focus-visible { color: #fff;
+  background: rgba(255,255,255,0.12); outline: none; }
+.lang-switcher__sep { color: var(--rule); }
+
+/* ── Hero (home) ─────────────────────────────────────────────────── */
+.hero { padding: clamp(48px, 9vw, 104px) 0 clamp(40px, 7vw, 84px); }
+/* The hero mark is the project side of the co-brand comparison. The full
+   ink-to-ink derivation lives with .hero .apoio-row further down, which is
+   where the funder marks are sized. */
+.hero .logo { height: clamp(112px, 14vw, 136px); width: auto; display: block;
+  margin-bottom: clamp(26px, 4vw, 44px); }
+.kicker { font-family: var(--font-wordmark); font-weight: 700;
+  font-size: clamp(0.66rem, 1.4vw, 0.8rem);
+  letter-spacing: clamp(0.06em, 1.1vw, 0.16em);
+  text-transform: uppercase; color: var(--orange-dark); }
+.hero h1 { font-family: var(--font-wordmark); font-weight: 700;
+  font-size: clamp(2.6rem, 8vw, 5.2rem); line-height: 1.02;
+  letter-spacing: -0.03em; color: var(--ink);
+  margin: clamp(14px, 2vw, 22px) 0 clamp(16px, 2.4vw, 26px); }
+.hero .lede { font-family: var(--font-body); font-size: clamp(1.1rem, 2.4vw, 1.6rem);
+  line-height: 1.45; color: var(--ink-soft); max-width: 30ch; }
+.hero .lede strong { color: var(--green-dark); font-weight: 600; }
+
+/* ── Page header (inner pages) ───────────────────────────────────── */
+.page-head { padding: clamp(40px, 6.5vw, 76px) 0 clamp(24px, 4vw, 40px);
+  border-bottom: 1px solid var(--rule); }
+.page-head h1 { font-family: var(--font-wordmark); font-weight: 700;
+  font-size: clamp(2rem, 5.4vw, 3.4rem); line-height: 1.08;
+  letter-spacing: -0.025em; color: var(--ink);
+  margin: clamp(10px, 1.6vw, 16px) 0 clamp(14px, 2vw, 20px); }
+.page-head .lede { font-size: clamp(1.04rem, 1.9vw, 1.3rem); line-height: 1.5;
+  color: var(--ink-soft); max-width: 56ch; }
+
+/* ── Section scaffold ────────────────────────────────────────────── */
+section { padding: clamp(44px, 7vw, 88px) 0; }
+.eyebrow { display: flex; align-items: center; gap: 13px;
+  font-family: var(--font-wordmark); font-weight: 700;
+  font-size: clamp(0.66rem, 1.3vw, 0.76rem); letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold-text-aa);
+  margin-bottom: clamp(18px, 3vw, 30px); }
+.eyebrow::before { content: ""; width: 26px; height: 4px; border-radius: 2px;
+  background: var(--gold); flex: none; }
+.prose p, .prose li { font-size: clamp(1.02rem, 1.7vw, 1.18rem); line-height: 1.7;
+  color: var(--ink-soft); max-width: 62ch; }
+.prose p { margin-bottom: 1em; }
+.prose p strong { color: var(--ink); }
+.prose p:last-child { margin-bottom: 0; }
+.prose h2 { font-family: var(--font-wordmark); font-weight: 700;
+  font-size: clamp(1.3rem, 3vw, 1.9rem); line-height: 1.2; color: var(--ink);
+  letter-spacing: -0.02em; margin: clamp(30px, 4.5vw, 48px) 0 clamp(12px, 1.8vw, 18px); }
+.prose h3 { font-family: var(--font-wordmark); font-weight: 700;
+  font-size: clamp(1.02rem, 2vw, 1.2rem); color: var(--ink);
+  margin: clamp(22px, 3vw, 30px) 0 clamp(8px, 1.2vw, 12px); }
+.prose ul { margin: 0 0 1em 1.15em; }
+.prose li { margin-bottom: 0.4em; }
+.prose blockquote { margin: clamp(20px,3vw,30px) 0; padding: clamp(14px,2vw,20px) clamp(18px,2.6vw,26px);
+  background: var(--white); border-left: 4px solid var(--gold);
+  border-radius: 0 8px 8px 0; }
+.prose blockquote p { margin: 0; color: var(--ink); }
+
+/* the concept — two short halves on wide screens */
+.concept { background: var(--white);
+  border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.twin { display: grid; gap: clamp(18px, 3vw, 36px); grid-template-columns: 1fr; }
+@media (min-width: 760px) { .twin { grid-template-columns: 1fr 1fr; } }
+.twin .side { padding: clamp(20px, 3vw, 30px);
+  border-radius: 10px; background: var(--paper); border: 1px solid var(--rule); }
+.twin .side.nl { border-top: 4px solid var(--orange); }
+.twin .side.br { border-top: 4px solid var(--green); }
+.twin .side h3 { font-family: var(--font-wordmark); font-weight: 700;
+  font-size: 0.72rem; letter-spacing: 0.13em; text-transform: uppercase;
+  margin-bottom: 10px; }
+.twin .side.nl h3 { color: var(--orange-dark); }
+.twin .side.br h3 { color: var(--green-dark); }
+.twin .side p { font-size: clamp(0.98rem, 1.6vw, 1.08rem);
+  color: var(--ink-soft); line-height: 1.6; }
+
+/* ── The loud green moment ───────────────────────────────────────── */
+.announce { background: var(--green); color: #fff;
+  text-align: center; padding: clamp(56px, 9vw, 104px) 0; }
+/* Decorative watermark, and the one deliberate accessibility exception on the
+   site: it holds the home page at Lighthouse a11y 96 while every other page is
+   100. Measured 1.47:1 against the green panel, where large text wants 3:1.
+   It cannot be fixed by tuning the alpha — the panel green #007F33 sits at
+   mid-luminance, so no tint or shade of it clears 3:1 short of near-solid
+   white or black, which would stop being a watermark and start competing with
+   the heading it sits behind. It carries aria-hidden because the year is
+   already stated in the body copy, so screen readers lose nothing; note that
+   aria-hidden does NOT exempt an element from axe's contrast rule, which is
+   why the score stays at 96 rather than 100. 96 clears the >=95 house gate.
+   To reach 100, delete the element — the panel reads fine without it. */
+.announce .yr { font-family: var(--font-wordmark); font-weight: 700;
+  font-size: clamp(3.4rem, 13vw, 8rem); line-height: 0.95;
+  letter-spacing: -0.03em; color: rgba(255,255,255,0.22); }
+.announce h2 { font-family: var(--font-wordmark); font-weight: 700;
+  font-size: clamp(1.5rem, 4.4vw, 2.9rem); line-height: 1.18;
+  letter-spacing: -0.02em; margin: clamp(-26px, -3vw, -16px) auto 18px;
+  max-width: 18ch; }
+.announce p { font-size: clamp(1rem, 2vw, 1.22rem); color: rgba(255,255,255,0.92);
+  max-width: 44ch; margin: 0 auto 18px; line-height: 1.55; }
+.announce .cta { display: inline-block; margin-top: 8px;
+  font-family: var(--font-wordmark); font-weight: 700;
+  font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink); background: var(--yellow);
+  padding: 12px 24px; border-radius: 999px; text-decoration: none;
+  transition: transform .18s, box-shadow .18s; }
+.announce .cta:hover, .announce .cta:focus-visible { transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.18); outline: none; }
+/* Secondary action on the green panel. White-on-green is 5.14:1, so the
+   outline treatment stays AA without the yellow fill competing for attention. */
+.announce .cta + .cta { margin-left: 10px; }
+.announce .cta--ghost { background: transparent; color: #fff;
+  box-shadow: inset 0 0 0 1.5px rgba(255,255,255,0.55); }
+.announce .cta--ghost:hover, .announce .cta--ghost:focus-visible {
+  box-shadow: inset 0 0 0 1.5px #fff; }
+@media (max-width: 520px) {
+  .announce .cta { display: block; margin: 10px auto 0; max-width: 22rem; }
+  .announce .cta + .cta { margin-left: auto; }
+}
+
+/* Same control on a light ground: gold fill would drop under AA against paper,
+   so the inline variant is ink-on-white with a gold rule. */
+.cta--inline { background: var(--white); color: var(--ink);
+  border: 1px solid var(--rule); border-bottom: 3px solid var(--gold);
+  text-decoration: none; }
+.cta--inline:hover, .cta--inline:focus-visible { transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.09); outline: none; }
+
+/* ── Method panels (tabs) ────────────────────────────────────────── */
+/* Progressive enhancement: without JS every .m-panel stays visible and the
+   section reads as six headed blocks. .is-enhanced is added by panels.js only
+   after it has successfully wired the tablist, so the collapsed presentation
+   can never strand content behind a script that failed to load. */
+.methods__tabs { display: grid; gap: clamp(8px, 1.4vw, 12px);
+  grid-template-columns: 1fr; margin-bottom: clamp(16px, 2.4vw, 24px); }
+@media (min-width: 620px) { .methods__tabs { grid-template-columns: repeat(3, 1fr); } }
+
+/* Group headings sit inside the same grid, spanning the full row, so the cards
+   stay in one container. That matters: it keeps panels.js's markup contract to
+   a single tab list, and it is why this is a disclosure set rather than an
+   ARIA tablist — a tablist may not contain headings. */
+.methods__head { grid-column: 1 / -1; display: flex; align-items: baseline;
+  gap: 10px; flex-wrap: wrap;
+  font-family: var(--font-wordmark); font-weight: 700;
+  font-size: clamp(0.95rem, 1.8vw, 1.08rem); color: var(--ink);
+  letter-spacing: -0.01em; margin-top: clamp(14px, 2.2vw, 22px); }
+.methods__head:first-child { margin-top: 0; }
+.methods__head .n { font-size: 0.68rem; letter-spacing: 0.14em;
+  color: var(--gold-text-aa); }
+.methods__head em { font-style: normal; font-weight: 500; font-size: 0.72rem;
+  letter-spacing: 0.13em; text-transform: uppercase; color: var(--green-dark);
+  padding: 3px 9px; border-radius: 999px; background: var(--white);
+  border: 1px solid var(--rule); }
+.m-tab { display: flex; flex-direction: column; gap: 5px; text-align: left;
+  padding: clamp(12px, 1.8vw, 16px) clamp(13px, 2vw, 18px);
+  background: var(--white); border: 1px solid var(--rule);
+  border-top: 3px solid var(--rule); border-radius: 10px;
+  font-family: var(--font-wordmark); cursor: pointer; color: var(--ink);
+  transition: border-color .18s, box-shadow .18s, transform .18s; }
+.m-tab:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.07); transform: translateY(-2px); }
+.m-tab:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.m-tab .side { font-weight: 700; font-size: 0.56rem; letter-spacing: 0.15em;
+  text-transform: uppercase; }
+.m-tab .name { font-weight: 700; font-size: clamp(0.96rem, 1.7vw, 1.06rem);
+  letter-spacing: -0.01em; }
+.m-tab .use { font-family: var(--font-body); font-size: 0.82rem;
+  color: var(--ink-muted-aa); line-height: 1.4; }
+.m-tab.br { border-top-color: var(--green); }
+.m-tab.nl { border-top-color: var(--orange); }
+.m-tab.br .side { color: var(--green-dark); }
+.m-tab.nl .side { color: var(--orange-dark); }
+.m-tab[aria-expanded="true"] { border-color: var(--gold); background: var(--paper);
+  box-shadow: inset 0 0 0 1px var(--gold); }
+
+/* Oficina cards on /oficinas/ — same disclosure machinery as the methods
+   grid, different face. Each oficina IS the meeting of both sides, so the top
+   rule is gold rather than one country's colour; the per-side green/orange
+   split belongs to the method cards, where the sides really are separate. */
+.methods--row .methods__tabs { margin-bottom: clamp(20px, 3vw, 28px); }
+.of-tab { border-top-color: var(--gold); gap: 7px; }
+.of-tab .num { font-weight: 700; font-size: 0.62rem; letter-spacing: 0.16em;
+  color: var(--gold-text-aa); }
+.of-tab .name { font-size: clamp(1rem, 1.9vw, 1.14rem); }
+.of-tab .use { font-family: var(--font-wordmark); font-weight: 500;
+  font-size: 0.7rem; letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--green-dark); }
+.of-tab.open .use { color: var(--ink-muted-aa); }
+
+/* "Na página: …" — names what the panel is NOT showing. Without it a two-
+   paragraph summary reads as the whole thing, and the dedicated page looks
+   like a duplicate rather than the substance. */
+.tem-mais { margin-top: clamp(12px, 1.8vw, 16px); font-size: 0.84rem;
+  line-height: 1.5; color: var(--ink-muted-aa); max-width: 62ch;
+  padding-left: 12px; border-left: 2px solid var(--gold); }
+
+/* The route out of a panel. A filled control needs a ground that clears AA
+   against white text: gold does not (that is why .cta--inline exists), green
+   #007F33 measures 5.14:1 and does. */
+.cta--go { background: var(--green); color: #fff; text-decoration: none;
+  border: 1px solid var(--green); }
+.cta--go:hover, .cta--go:focus-visible { background: var(--green-dark);
+  border-color: var(--green-dark); transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12); outline: none; }
+
+/* Panel heading doubles as the link to the full page. Conventional, and it
+   means the route is the first thing in the panel as well as the last. */
+.m-panel h3 a { color: inherit; text-decoration: none;
+  border-bottom: 2px solid var(--gold); }
+.m-panel h3 a:hover, .m-panel h3 a:focus-visible { color: var(--green-dark);
+  border-bottom-color: var(--green); }
+
+/* A chevron, not an arrow. The card EXPANDS, it does not navigate; an arrow
+   here would promise a jump and deliver a panel, which is the confusion this
+   whole change exists to remove. The arrows live on the heading link and the
+   CTA, which really do navigate. */
+.of-tab { position: relative; padding-right: clamp(30px, 4vw, 38px); }
+.of-tab::after { content: "\25BE"; position: absolute; right: clamp(12px, 2vw, 16px);
+  top: clamp(12px, 1.8vw, 16px); font-size: 0.8rem; color: var(--ink-muted-aa);
+  transition: transform .18s; }
+.of-tab[aria-expanded="true"]::after { transform: rotate(180deg);
+  color: var(--gold-text-aa); }
+.of-tab .has-page { font-family: var(--font-body); font-size: 0.72rem;
+  color: var(--ink-muted-aa); font-style: italic; }
+
+/* The open card. Dashed and unfilled because the Dutch layer for Quem Decide a
+   Água is genuinely not chosen yet; it should read as work in progress, not as
+   a card someone forgot to fill in. */
+.m-tab.open { border-style: dashed; border-top-style: dashed;
+  border-color: var(--ink-muted-aa); background: transparent; }
+.m-tab.open .side { color: var(--ink-muted-aa); }
+.m-tab.open .name { color: var(--ink-soft); }
+.m-tab.open[aria-expanded="true"] { border-color: var(--gold);
+  background: var(--paper); }
+
+.m-panel { padding-top: clamp(6px, 1vw, 10px); }
+/* Un-enhanced: panels stack with a heading rule so they read as a list. */
+.methods:not(.is-enhanced) .m-panel { padding-top: clamp(20px, 3vw, 28px);
+  margin-top: clamp(18px, 2.6vw, 26px); border-top: 1px solid var(--rule); }
+.methods.is-enhanced .m-panel[hidden] { display: none; }
+.m-panel h3 { font-family: var(--font-wordmark); font-weight: 700;
+  font-size: clamp(1.16rem, 2.4vw, 1.5rem); color: var(--ink);
+  letter-spacing: -0.02em; margin-bottom: 4px; }
+
+/* ── Question cards ──────────────────────────────────────────────── */
+/* The five Teatro-Jornal questions are Isaac's text and the most quotable
+   thing on the page, so they get cards rather than a bullet list. Kept in HTML
+   rather than baked into the SVG: they are long, they will be translated, and
+   text in an <svg> cannot reflow. */
+.qcards { display: grid; gap: clamp(8px, 1.3vw, 12px);
+  grid-template-columns: 1fr; margin: clamp(16px, 2.4vw, 22px) 0; }
+@media (min-width: 560px) { .qcards { grid-template-columns: 1fr 1fr; } }
+.qcards li { list-style: none; display: flex; gap: 11px; align-items: flex-start;
+  padding: clamp(11px, 1.6vw, 14px) clamp(12px, 1.8vw, 16px);
+  background: var(--white); border: 1px solid var(--rule);
+  border-radius: 10px; font-size: 0.95rem; line-height: 1.45; color: var(--ink); }
+.qcards li::before { content: "?"; flex: none; width: 22px; height: 22px;
+  border-radius: 50%; background: var(--green); color: #fff;
+  font-family: var(--font-wordmark); font-weight: 700; font-size: 0.78rem;
+  display: grid; place-items: center; margin-top: 1px; }
+
+/* ── Embedded map ────────────────────────────────────────────────── */
+/* Same-origin iframe, lazy. The map page is ~2.2 MB — inlining it would sink
+   this page's performance, and linking it away would break the "embedded in
+   the theme description" intent. loading="lazy" gets both: the map appears
+   inline, but its weight is not on the critical path. */
+.mapa-embed { margin: clamp(18px,2.6vw,26px) 0 0; }
+/* aspect-ratio is the pre-JS default only. mapframe.js measures the frame's
+   own document and replaces this with an exact height, because the map reflows
+   from 1127px tall at 1000px wide to 1606px at 900px and no single ratio
+   covers both. */
+.mapa-embed iframe { display: block; width: 100%; aspect-ratio: 1000 / 1160;
+  border: 1px solid var(--rule); border-radius: 12px; background: var(--paper); }
+@media (max-width: 1020px) { .mapa-embed iframe { aspect-ratio: 1000 / 1900; } }
+.mapa-embed figcaption { margin-top: 10px; font-size: 0.84rem; line-height: 1.5;
+  color: var(--ink-muted-aa); max-width: 68ch; }
+.mapa-embed figcaption b { color: var(--ink-soft); font-weight: 600; }
+
+/* ── Diagram figures ─────────────────────────────────────────────── */
+/* Diagrams are inline SVG lifted from the locked deck. They scroll inside
+   their own container rather than shrinking to illegibility on a phone: these
+   carry 8pt labels, so squeezing a 1000-unit viewBox into 358px would make the
+   text unreadable. min-width keeps them at a size where the labels hold. */
+figure.diagram { margin: clamp(20px, 3vw, 32px) 0; }
+figure.diagram .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch;
+  padding-bottom: 6px; }
+figure.diagram svg { display: block; width: 100%; height: auto; }
+figure.diagram.wide  .scroll svg { min-width: 720px; }
+figure.diagram.tall  .scroll svg { min-width: 560px; }
+figure.diagram figcaption { margin-top: 10px; font-size: 0.86rem; line-height: 1.5;
+  color: var(--ink-muted-aa); max-width: 62ch; }
+figure.diagram figcaption b { color: var(--ink-soft); font-weight: 600; }
+
+/* ── Fundamento block: diagram + sourced credits + the Ponte hook ── */
+.fundamento { padding-top: clamp(26px, 4vw, 40px); }
+.fundamento + .fundamento { margin-top: clamp(30px, 4.5vw, 48px);
+  border-top: 1px solid var(--rule); }
+.fundamento h3 { font-family: var(--font-wordmark); font-weight: 700;
+  font-size: clamp(1.2rem, 2.6vw, 1.6rem); color: var(--ink);
+  letter-spacing: -0.02em; margin-bottom: 4px; }
+.fundamento .origin { font-size: 0.92rem; line-height: 1.6; color: var(--ink-muted-aa);
+  max-width: 68ch; margin-bottom: 4px; }
+.fundamento .origin em { font-style: italic; }
+.gancho { margin-top: clamp(14px, 2vw, 20px);
+  padding: clamp(14px, 2vw, 18px) clamp(16px, 2.4vw, 22px);
+  background: var(--white); border: 1px solid var(--rule);
+  border-left: 4px solid var(--gold); border-radius: 0 10px 10px 0; }
+.gancho .lab { display: block; font-family: var(--font-wordmark); font-weight: 700;
+  font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--gold-text-aa); margin-bottom: 6px; }
+.gancho p { font-size: clamp(0.98rem, 1.6vw, 1.06rem); line-height: 1.6;
+  color: var(--ink); max-width: 64ch; }
+
+/* ── Vocabulary ──────────────────────────────────────────────────── */
+/* Anchors here back the DefinedTerm @ids in the page's JSON-LD, so an answer
+   engine can cite a single term. Keep ids and _src/site.json glossary in step. */
+.vocab { display: grid; gap: clamp(12px, 2vw, 18px); grid-template-columns: 1fr; }
+@media (min-width: 700px) { .vocab { grid-template-columns: 1fr 1fr; } }
+.vocab .term { padding: clamp(14px, 2vw, 18px); background: var(--white);
+  border: 1px solid var(--rule); border-radius: 10px; scroll-margin-top: 24px; }
+.vocab .term.br { border-top: 3px solid var(--green); }
+.vocab .term.nl { border-top: 3px solid var(--orange); }
+.vocab dt { font-family: var(--font-wordmark); font-weight: 700;
+  font-size: 1rem; color: var(--ink); margin-bottom: 5px; }
+.vocab dd { font-size: 0.94rem; line-height: 1.6; color: var(--ink-soft); }
+.vocab .side { float: right; font-family: var(--font-wordmark); font-weight: 700;
+  font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; }
+.vocab .term.br .side { color: var(--green-dark); }
+.vocab .term.nl .side { color: var(--orange-dark); }
+
+/* ── Oficina cards ───────────────────────────────────────────────── */
+.oficinas { display: grid; gap: clamp(16px, 2.6vw, 26px); grid-template-columns: 1fr; }
+@media (min-width: 880px) { .oficinas { grid-template-columns: repeat(3, 1fr); } }
+.of-card { padding: clamp(20px, 3vw, 28px); background: var(--white);
+  border: 1px solid var(--rule); border-radius: 12px;
+  border-top: 4px solid var(--gold); display: flex; flex-direction: column; gap: 10px; }
+.of-card .num { font-family: var(--font-wordmark); font-weight: 700;
+  font-size: 0.7rem; letter-spacing: 0.16em; color: var(--gold-text-aa); }
+.of-card h3 { font-family: var(--font-wordmark); font-weight: 700;
+  font-size: clamp(1.1rem, 2.2vw, 1.32rem); color: var(--ink); letter-spacing: -0.01em; }
+.of-card .mov { font-family: var(--font-wordmark); font-weight: 700;
+  font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: #fff; background: var(--green); align-self: flex-start;
+  padding: 5px 11px; border-radius: 999px; }
+.of-card p { font-size: 0.99rem; line-height: 1.62; color: var(--ink-soft); }
+.of-card .pair { margin-top: auto; padding-top: 12px; border-top: 1px dashed var(--rule);
+  font-size: 0.88rem; color: var(--ink-muted-aa); }
+.of-card .pair b { color: var(--green-dark); font-weight: 600; }
+.of-card .pair i { color: var(--orange-dark); font-style: normal; font-weight: 600; }
+
+/* ── Nas redes — Instagram gallery (static, self-hosted) ─────────── */
+.ig { background: var(--paper); }
+.ig-grid { display: grid; gap: clamp(8px, 1.5vw, 14px);
+  grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 620px) { .ig-grid { grid-template-columns: repeat(3, 1fr); } }
+.ig-card { position: relative; display: block; aspect-ratio: 1 / 1;
+  overflow: hidden; border-radius: 10px; border: 1px solid var(--rule);
+  background: var(--white);
+  transition: border-color .18s, box-shadow .18s, transform .18s; }
+.ig-card:hover, .ig-card:focus-visible { border-color: var(--gold);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.10); transform: translateY(-2px); outline: none; }
+.ig-card img { width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform .3s ease; }
+.ig-card:hover img { transform: scale(1.04); }
+.ig-badge { position: absolute; top: 8px; right: 10px; color: #fff;
+  font-size: 0.8rem; line-height: 1; text-shadow: 0 1px 4px rgba(0,0,0,0.55); }
+.ig-follow { display: inline-flex; align-items: center; gap: 12px;
+  margin-top: clamp(24px, 4vw, 38px); padding: 12px clamp(18px, 2.6vw, 26px);
+  background: var(--white); border: 1px solid var(--rule); border-radius: 999px;
+  text-decoration: none; color: var(--ink);
+  font-family: var(--font-wordmark); font-weight: 700; font-size: 0.98rem;
+  transition: border-color .18s, box-shadow .18s, transform .18s; }
+.ig-follow:hover, .ig-follow:focus-visible { border-color: var(--gold);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.08); transform: translateY(-2px); outline: none; }
+.ig-follow strong { color: var(--green-dark); font-weight: 700; }
+.ig-glyph { width: 22px; height: 22px; color: var(--ink); flex: none; }
+.ig-ext { color: var(--ink-muted); }
+
+/* ── Realização ──────────────────────────────────────────────────── */
+.partners { background: var(--white); border-top: 1px solid var(--rule); }
+.makers { display: flex; flex-wrap: wrap; gap: clamp(14px, 3vw, 24px); }
+.maker-pill { flex: 1 1 280px; min-width: 0; display: flex;
+  align-items: center; gap: clamp(14px, 2.4vw, 20px);
+  padding: clamp(14px, 2.4vw, 20px) clamp(22px, 3vw, 32px);
+  background: var(--white); border: 1px solid var(--rule);
+  border-radius: 999px; text-decoration: none; color: var(--ink);
+  transition: border-color .18s, box-shadow .18s, transform .18s; }
+.maker-pill:hover, .maker-pill:focus-visible { border-color: var(--gold);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.08); transform: translateY(-2px); outline: none; }
+.maker-pill .mlogo { height: clamp(32px, 5vw, 44px); width: auto; flex: none; display: block; }
+.maker-pill .mtxt { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.maker-pill .mrole { font-family: var(--font-wordmark); font-weight: 700;
+  font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--gold-text-aa); }
+.maker-pill .mname { font-family: var(--font-wordmark); font-weight: 700;
+  font-size: clamp(1rem, 2vw, 1.18rem); color: var(--ink); }
+.maker-pill .mext { margin-left: auto; flex: none;
+  font-family: var(--font-wordmark); font-size: 0.95rem; color: var(--ink-muted); }
+
+/* ── Funder co-brand zone — in the hero, under the lede ──────────────
+   Moved back out of the footer on request (2026-08-11). The zone itself is
+   NOT optional: BRAND.md § funder co-brand makes it mandatory on every
+   outward artifact, so it lives here rather than nowhere.
+
+   Geometry rule — "funder marks never larger than the project mark" — checked
+   ink-to-ink, because each file carries its own clear space inside the box:
+     ponte-logo-color.svg  viewBox 200x84, ink 163x53  -> ink w = 0.815 x box w
+                                                          ink h = 0.631 x box h
+     nl-200anos-pt.webp    canvas 450x281, ink 406x222 -> ink w = 0.902 x box w
+                                                          ink h = 0.790 x box h
+   The funder floor is 120px of VISIBLE mark, so its box floor is 134px
+   (0.9022 x 134 = 120.9), giving ink 120.9 x 66.2. The hero mark at box height
+   112 gives ink 217.3 x 70.7, leading on both axes. Across the scaling band
+   the project ink height (0.631 x 14vw = 8.83vw) stays above the funder ink
+   height (0.493 x 15vw = 7.40vw). Verified in-browser at 500/700/900/1100/
+   1280/1920. Re-derive if either clamp moves. */
+/* The selection claim and the funder marks are ONE block: what we won and who
+   funded it belong to the same statement, and splitting them was the note that
+   prompted this. The rule above the block separates it from the lede. */
+.hero .apoio-block { margin-top: clamp(30px, 4.5vw, 44px);
+  padding-top: clamp(20px, 3vw, 28px);
+  border-top: 1px solid var(--rule); }
+.hero .apoio-claim { font-size: clamp(0.96rem, 1.6vw, 1.06rem); line-height: 1.55;
+  color: var(--ink-soft); max-width: 52ch;
+  margin: clamp(10px, 1.6vw, 14px) 0 clamp(18px, 2.6vw, 26px); }
+.hero .apoio-claim strong { color: var(--ink); font-weight: 600; }
+.hero .apoio-row { display: flex; align-items: center; flex-wrap: wrap;
+  gap: clamp(16px, 3vw, 28px); }
+.hero .apoio-row .lbl { font-family: var(--font-wordmark); font-weight: 700;
+  font-size: clamp(0.6rem, 1.1vw, 0.66rem); letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--ink-soft); }
+.hero .apoio-row img { display: block; height: auto; }
+.hero .apoio-row .fnd-200  { width: clamp(134px, 15vw, 160px); }
+.hero .apoio-row .fnd-rijk { width: clamp(134px, 15vw, 160px); }
+
+/* ── Selection badge ─────────────────────────────────────────────── */
+.selo { display: inline-flex; align-items: center; gap: 10px;
+  margin-bottom: clamp(16px, 2.4vw, 22px);
+  padding: 8px 16px 8px 12px; border-radius: 999px;
+  background: var(--white); border: 1px solid var(--rule);
+  font-family: var(--font-wordmark); font-weight: 700; font-size: 0.72rem;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-dark); }
+.selo::before { content: ""; width: 10px; height: 10px; flex: none;
+  border-radius: 50%; background: var(--green); }
+
+/* ── Footer ──────────────────────────────────────────────────────── */
+footer { background: var(--ink); color: rgba(255,255,255,0.7);
+  padding: clamp(34px, 5vw, 52px) 0; }
+
+footer .ft { display: flex; flex-wrap: wrap; gap: 14px 32px;
+  align-items: center; justify-content: space-between; }
+/* Footer text alphas are contrast-bound, not taste-bound: white on ink
+   #1A1A1A needs >=0.47 alpha to clear 4.5:1 at these sizes. .updated was 0.40
+   (3.83:1) and failed; both values moved up together so the quiet-to-quieter
+   hierarchy survives instead of collapsing onto one tone. */
+footer .meta { font-family: var(--font-wordmark);
+  font-size: 0.74rem; letter-spacing: 0.06em; color: rgba(255,255,255,0.62); }
+.ft-links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.ft-links a { font-family: var(--font-wordmark); font-size: 0.78rem;
+  color: rgba(255,255,255,0.68); text-decoration: none; }
+.ft-links a:hover, .ft-links a:focus-visible { color: #fff;
+  text-decoration: underline; }
+footer .updated { margin-top: clamp(16px, 2.4vw, 22px);
+  font-family: var(--font-wordmark); font-size: 0.7rem;
+  color: rgba(255,255,255,0.5); }
+/* Production credit, text only. BRAND-SYSTEM.md hard-rule 5 allows Regen Studio
+   at most a small text credit on Ponte surfaces — no Regen mark, no chameleon,
+   nothing that would put a second organisation's logo beside the funder's.
+
+   Alpha matches .updated rather than sitting under it: at 0.42 the composite
+   over ink was #7A7A7A, 4.05:1, which fails AA for 11.2px text and quietly
+   dropped every page from a11y 100 to 96. The credit stays subordinate through
+   its size and position, not through 8% of alpha nobody can see. */
+footer .credit { color: rgba(255,255,255,0.5); }

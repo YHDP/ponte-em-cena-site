@@ -1,0 +1,60 @@
+# robots.txt for ponte-em-cena.com.br
+
+User-agent: *
+Allow: /
+# Build sources. The served pages are generated from these, so indexing them
+# would be duplicate content.
+Disallow: /_src/
+Disallow: /tools/
+Disallow: /.screenshots/
+
+# AI search & citation bots — explicitly allowed.
+# This is a methodology project: being quoted accurately by an answer engine is
+# the point. See /llms.txt for a machine-readable summary.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Training-only crawlers — blocked. High crawl volume, no citation back.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: claude-web
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+Sitemap: https://ponte-em-cena.com.br/sitemap.xml

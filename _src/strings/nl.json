@@ -1,0 +1,149 @@
+{
+  "_comment": "Nederlands staat onder /nl/. Slugs blijven identiek aan PT — assets/js/i18n.js leidt de switcher-URL af door de prefix te strippen en opnieuw toe te voegen, dus een pagina staat in elke taal op hetzelfde pad. Register: je-vorm, consequent. Geen em-dash (huisstijl): komma, dubbele punt of haakjes.",
+  "ui": {
+    "skip": "Naar de inhoud",
+    "navLabel": "Hoofdnavigatie",
+    "apoio": "Met steun van",
+    "apoioLabel": "Institutionele steun",
+    "alt200": "200 Jaar Vriendschap Brazilië – Nederland",
+    "altRijk": "Koninkrijk der Nederlanden",
+    "footerMeta": "Cultural Connections 2026 · Met steun van de Ambassade en het Consulaat-Generaal van het Koninkrijk der Nederlanden",
+    "footerNav": "Links in de voettekst",
+    "updated": "Laatst bijgewerkt:",
+    "ogImageAlt": "Ponte em Cena — Cultural Connections 2026 — vakwerkbrug die van groen (Brazilië) via goud (de ontmoeting) naar oranje (Nederland) loopt",
+    "glossaryName": "Vocabulaire van de methode — Ponte em Cena",
+    "credit": "Site door Regen Studio"
+  },
+  "nav": {
+    "metodologia": "Methodiek",
+    "oficinas": "Workshops",
+    "sobre": "Over",
+    "contato": "Contact",
+    "teatro-do-oprimido": "Theater van de Onderdrukten",
+    "privacidade": "Privacy",
+    "diagnosticar": "Diagnosticeren",
+    "gerar": "Genereren"
+  },
+  "people": [
+    {
+      "id": "isaac",
+      "name": "Isaac Medeiros",
+      "jobTitle": "Acteur, theaterdocent en Curinga",
+      "affiliation": "(in)PULSO"
+    },
+    {
+      "id": "yvo",
+      "name": "Yvo Hunink",
+      "jobTitle": "Specialist design thinking",
+      "affiliation": "Regen Studio"
+    }
+  ],
+  "pages": {
+    "": {
+      "title": "Ponte em Cena — culturele uitwisseling Brazilië ⇄ Nederland",
+      "ogTitle": "Ponte em Cena — culturele uitwisseling Brazilië ⇄ Nederland",
+      "description": "Ponte em Cena is een methodiek voor culturele uitwisseling tussen Brazilië en Nederland, waarin het Theater van de Onderdrukten van Augusto Boal wordt gekruist met Nederlandse ontwerpmethoden. Een reeks workshops in 2026.",
+      "ogDescription": "Een methodiek voor culturele uitwisseling tussen Brazilië en Nederland. Theater van de Onderdrukten ontmoet Nederlands ontwerp."
+    },
+    "metodologia": {
+      "title": "Methodiek — Theater van de Onderdrukten en Nederlands ontwerp | Ponte em Cena",
+      "ogTitle": "De methode: Braziliaans theater als motor van een Nederlands ontwerpproces",
+      "description": "De fundamenten van de methode: het Theater van de Onderdrukten van Augusto Boal (Krantentheater, Beeldtheater, Wetgevend Theater) en de Nederlandse reflectielaag met Context Mapping, kleurendenken en Frame Creation.",
+      "ogDescription": "Boal ontmoet Delft: hoe theater de generatieve sessie wordt en Nederlands ontwerp de analyselens."
+    },
+    "oficinas": {
+      "title": "De drie workshops — diagnosticeren, genereren, beslissen | Ponte em Cena",
+      "ogTitle": "Drie workshops, drie bewegingen",
+      "description": "Diagnosticeren, genereren, beslissen. Drie workshops die het Theater van de Onderdrukten kruisen met Nederlandse ontwerpmethoden. Het onderwerp van elke cyclus wordt samen met het Consulaat gekozen.",
+      "ogDescription": "Diagnosticeren, genereren, beslissen. De beweging bepaalt de workshop, het onderwerp kiezen we met het Consulaat."
+    },
+    "sobre": {
+      "title": "Over het project — Cultural Connections 2026 | Ponte em Cena",
+      "ogTitle": "Over Ponte em Cena",
+      "description": "Wie Ponte em Cena maakt, hoe het project is ontstaan, en wat tweehonderd jaar Braziliaans-Nederlandse vriendschap te maken heeft met een repetitieruimte in São Paulo.",
+      "ogDescription": "Regen Studio en (in)PULSO, met steun van het Consulaat-Generaal van het Koninkrijk der Nederlanden in São Paulo."
+    },
+    "contato": {
+      "title": "Contact | Ponte em Cena",
+      "ogTitle": "Neem contact op met Ponte em Cena",
+      "description": "Hoe je Ponte em Cena bereikt: om aan een workshop mee te doen, een samenwerking voor te stellen of meer over de methode te weten.",
+      "ogDescription": "Om mee te doen, een samenwerking voor te stellen of meer over de methode te weten."
+    },
+    "404": {
+      "noindex": true,
+      "title": "Pagina niet gevonden | Ponte em Cena",
+      "ogTitle": "Pagina niet gevonden",
+      "description": "Deze pagina bestaat niet, of is verhuisd."
+    },
+    "privacidade": {
+      "title": "Privacy — wat we verzamelen en wat niet | Ponte em Cena",
+      "ogTitle": "Privacy bij Ponte em Cena",
+      "description": "Wat deze site verzamelt, wat niet, en hoe we omgaan met het materiaal dat in de workshops ontstaat. Geen cookies, geen tracker van derden. LGPD en AVG.",
+      "ogDescription": "Geen cookies, geen tracker van derden. Wat we verzamelen, en wat er met workshopmateriaal gebeurt."
+    },
+    "diagnosticar": {
+      "title": "Workshop 01 · Diagnosticeren — Krantentheater en de gekruiste lezing",
+      "ogTitle": "Diagnosticeren: hetzelfde verhaal van twee kanten lezen",
+      "description": "De eerste workshop van Ponte em Cena. Twee nieuwsberichten over hetzelfde onderwerp, één uit elk land, naast elkaar gelezen met Krantentheater, Context Mapping en kleurendenken."
+    },
+    "gerar": {
+      "title": "Workshop 02 · Genereren — Forumtheater en de herkadering",
+      "ogTitle": "Genereren: de impasse spelen en hem opnieuw kaderen",
+      "description": "De tweede workshop van Ponte em Cena. Een gespeelde impasse, een publiek dat ingrijpt, en de stap uit Frame Creation die vraagt naar welke hefboom niemand greep."
+    }
+  },
+  "glossary": {
+    "espect-ator": {
+      "name": "Toeschouw-speler",
+      "description": "Wie kijkt, handelt ook: stapt de scène in, vervangt de protagonist en probeert een andere weg. De figuur waar de hele methode naar heet."
+    },
+    "curinga": {
+      "name": "Curinga",
+      "description": "De begeleider. Leidt zonder te leren welke lezing de juiste is, en zorgt dat één perspectief de zaal niet overneemt."
+    },
+    "cena-modelo": {
+      "name": "Modelscène",
+      "description": "De scène met een probleem dat niet oplost. Hij wordt een tweede keer gespeeld, zodat het publiek hem kan onderbreken."
+    },
+    "imagem-real-desejada": {
+      "name": "Werkelijk beeld en gewenst beeld",
+      "description": "Twee sculpturen van de lichamen in de groep: de situatie zoals die is, en zoals men die zou willen. Wat moet veranderen zit ertussen."
+    },
+    "dinamizacao": {
+      "name": "Dynamisering",
+      "description": "Een stilstaand beeld in beweging zetten, om te zien welke krachten erin zitten en welke kant het op wil."
+    },
+    "sessao-generativa": {
+      "name": "Generatieve sessie",
+      "description": "In Context Mapping de oefening die bereikt wat interviews niet bereiken. Bij Ponte em Cena is het theater die sessie."
+    },
+    "camada-tacita": {
+      "name": "Tacit en latent",
+      "description": "Wat mensen weten zonder te weten dat ze het weten, en wat ze nog niet onder woorden hebben. De twee diepste lagen van het Delftse model."
+    },
+    "caderno-sensibilizacao": {
+      "name": "Sensitizing booklet",
+      "description": "Materiaal dat dagen vooraf wordt gestuurd, zodat de groep binnenkomt terwijl ze het eigen leven al observeert. Dun huiswerk, dikke collage."
+    },
+    "cor-ausente": {
+      "name": "De ontbrekende kleur",
+      "description": "In kleurendenken de veranderroute waar niemand naar greep. Meestal diagnostischer dan de dominante kleur."
+    },
+    "paradoxo": {
+      "name": "Paradox",
+      "description": "In Frame Creation de formulering die het probleem vastzet: we hebben X nodig, maar X verhindert Y. Stap 2 van de negen."
+    },
+    "campo": {
+      "name": "Veld",
+      "description": "Stap 4: het bredere terrein van actoren, waarden en krachten rond het probleem. Bij Ponte em Cena zijn dat lichamen in het veld, geen kaart."
+    },
+    "quadro": {
+      "name": "Kader (frame)",
+      "description": "Stap 6, het scharnier: het nieuwe kader van waaruit andere oplossingen mogelijk worden."
+    },
+    "linha-de-captura": {
+      "name": "Vanglijn",
+      "description": "De zin die elke ingreep in het Forumtheater vastlegt: probeerde [handeling] met een beroep op [waarde, actor of hefboom]. Daarna vraag je naar welke hefboom niemand greep."
+    }
+  }
+}

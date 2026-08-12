@@ -1,0 +1,155 @@
+{
+  "_comment": "PT-BR is the default language and lives at the site root. Keys under ui.* map to {{S_*}} placeholders in shell.html (camelCase becomes SNAKE_CASE).",
+  "ui": {
+    "skip": "Ir para o conteúdo",
+    "navLabel": "Navegação principal",
+    "apoio": "Apoio",
+    "apoioLabel": "Apoio institucional",
+    "alt200": "200 Anos de Amizade Brasil — Países Baixos",
+    "altRijk": "Reino dos Países Baixos",
+    "footerMeta": "Conexões Culturais 2026 · Apoio: Embaixada e Consulado-Geral do Reino dos Países Baixos",
+    "footerNav": "Links do rodapé",
+    "updated": "Última atualização:",
+    "ogImageAlt": "Ponte em Cena — Conexões Culturais 2026 — ponte de treliça verde (Brasil) → dourado (encontro) → laranja (Países Baixos)",
+    "glossaryName": "Vocabulário do método — Ponte em Cena",
+    "credit": "Site por Regen Studio"
+  },
+  "nav": {
+    "metodologia": "Metodologia",
+    "oficinas": "Oficinas",
+    "sobre": "Sobre",
+    "contato": "Contato",
+    "teatro-do-oprimido": "Teatro do Oprimido",
+    "privacidade": "Privacidade",
+    "diagnosticar": "Diagnosticar",
+    "gerar": "Gerar"
+  },
+  "people": [
+    {
+      "id": "isaac",
+      "name": "Isaac Medeiros",
+      "jobTitle": "Ator, professor de teatro e curinga",
+      "affiliation": "(in)PULSO"
+    },
+    {
+      "id": "yvo",
+      "name": "Yvo Hunink",
+      "jobTitle": "Especialista em Design Thinking",
+      "affiliation": "Regen Studio"
+    }
+  ],
+  "pages": {
+    "": {
+      "title": "Ponte em Cena — conexão cultural Brasil ⇄ Países Baixos",
+      "ogTitle": "Ponte em Cena — conexão cultural Brasil ⇄ Países Baixos",
+      "description": "Ponte em Cena é uma metodologia de intercâmbio cultural entre o Brasil e os Países Baixos, cruzando o Teatro do Oprimido com métodos holandeses de design. Uma série de oficinas em 2026.",
+      "ogDescription": "Uma metodologia de intercâmbio cultural entre o Brasil e os Países Baixos — Teatro do Oprimido encontrando o design holandês."
+    },
+    "metodologia": {
+      "title": "Metodologia — Teatro do Oprimido e design holandês | Ponte em Cena",
+      "ogTitle": "O método: teatro brasileiro como motor de um design holandês",
+      "description": "Os fundamentos do método: o Teatro do Oprimido de Augusto Boal (Teatro-Jornal, Teatro-Imagem, Teatro Legislativo) e a camada holandesa de reflexão — Context Mapping, Kleurendenken e Frame Creation.",
+      "ogDescription": "Boal encontra Delft: como o teatro vira sessão generativa e o design holandês vira lente de análise."
+    },
+    "oficinas": {
+      "title": "As três oficinas — diagnosticar, gerar, decidir | Ponte em Cena",
+      "ogTitle": "Três oficinas, três movimentos",
+      "description": "Diagnosticar, gerar, decidir. Três oficinas que cruzam o Teatro do Oprimido de Augusto Boal com métodos holandeses de design. O tema de cada ciclo é definido junto com o Consulado.",
+      "ogDescription": "Diagnosticar, gerar, decidir. O movimento define a oficina; o assunto é escolhido com o Consulado."
+    },
+    "teatro-do-oprimido": {
+      "title": "Teatro do Oprimido — fundamentos da metodologia de Augusto Boal | Ponte em Cena",
+      "ogTitle": "Teatro do Oprimido: a metodologia de Augusto Boal",
+      "description": "Documento institucional sobre o Teatro do Oprimido: por que Boal o criou, o espect-ator, o papel do Curinga, as técnicas (Teatro-Jornal, Teatro-Imagem, Teatro Legislativo) e sua aplicação no Ponte em Cena.",
+      "ogDescription": "Por que Boal criou o método, o que é um espect-ator, e o que o Curinga faz."
+    },
+    "sobre": {
+      "title": "Sobre o projeto — Conexões Culturais 2026 | Ponte em Cena",
+      "ogTitle": "Sobre o Ponte em Cena",
+      "description": "Quem realiza o Ponte em Cena, como o projeto nasceu e o que os 200 anos de amizade entre o Brasil e os Países Baixos têm a ver com uma sala de teatro em São Paulo.",
+      "ogDescription": "Regen Studio e (in)PULSO, com apoio do Consulado-Geral do Reino dos Países Baixos em São Paulo."
+    },
+    "contato": {
+      "title": "Contato | Ponte em Cena",
+      "ogTitle": "Fale com o Ponte em Cena",
+      "description": "Como entrar em contato com o Ponte em Cena — para participar de uma oficina, propor uma parceria ou saber mais sobre o método.",
+      "ogDescription": "Para participar, propor uma parceria ou saber mais sobre o método."
+    },
+    "404": {
+      "noindex": true,
+      "title": "Página não encontrada | Ponte em Cena",
+      "ogTitle": "Página não encontrada",
+      "description": "Esta página não existe ou mudou de endereço."
+    },
+    "privacidade": {
+      "title": "Privacidade — o que coletamos e o que não coletamos | Ponte em Cena",
+      "ogTitle": "Privacidade no Ponte em Cena",
+      "description": "O que o site coleta, o que não coleta, e como tratamos o material produzido nas oficinas. Sem cookies, sem rastreador de terceiros. LGPD e GDPR.",
+      "ogDescription": "Sem cookies, sem rastreador de terceiros. O que coletamos, e o que fazemos com o material das oficinas."
+    },
+    "diagnosticar": {
+      "title": "Oficina 01 · Diagnosticar — Teatro-Jornal e a leitura cruzada",
+      "ogTitle": "Diagnosticar: ler a mesma história pelos dois lados",
+      "description": "A primeira oficina do Ponte em Cena. Uma notícia holandesa e uma brasileira sobre o mesmo assunto, lidas em paralelo com Teatro-Jornal, Context Mapping e Kleurendenken."
+    },
+    "gerar": {
+      "title": "Oficina 02 · Gerar — Teatro Fórum e o reenquadramento",
+      "ogTitle": "Gerar: encenar o impasse e reenquadrá-lo",
+      "description": "A segunda oficina do Ponte em Cena. Um impasse encenado, uma plateia que intervém, e o passo do Frame Creation que pergunta a que alavanca ninguém apelou."
+    }
+  },
+  "glossary": {
+    "espect-ator": {
+      "name": "Espect-ator",
+      "description": "Quem assiste também age: entra na cena, substitui o protagonista e testa outro caminho. É a figura que dá nome ao método inteiro."
+    },
+    "curinga": {
+      "name": "Curinga",
+      "description": "O facilitador. Conduz sem ensinar qual interpretação está correta, e cuida para que uma só perspectiva não domine a sala."
+    },
+    "cena-modelo": {
+      "name": "Cena modelo",
+      "description": "A cena que mostra um problema que não se resolve. É encenada uma segunda vez para que a plateia possa interrompê-la."
+    },
+    "imagem-real-desejada": {
+      "name": "Imagem real e imagem desejada",
+      "description": "Duas esculturas com o corpo do grupo: a situação como é e como se queria que fosse. Entre as duas está o que precisa mudar."
+    },
+    "dinamizacao": {
+      "name": "Dinamização",
+      "description": "Pôr em movimento uma imagem parada, para ver que forças ela contém e para onde ela tende."
+    },
+    "sessao-generativa": {
+      "name": "Sessão generativa",
+      "description": "No Context Mapping, o exercício que alcança o que entrevistas não alcançam. No Ponte em Cena, o teatro é essa sessão."
+    },
+    "camada-tacita": {
+      "name": "Camada tácita e latente",
+      "description": "O que as pessoas sabem sem saber que sabem, e o que ainda não formularam. As duas camadas mais fundas do modelo de Delft."
+    },
+    "caderno-sensibilizacao": {
+      "name": "Caderno de sensibilização",
+      "description": "Material enviado dias antes da oficina para que o grupo chegue já observando a própria vida. Pré-trabalho fino, colagem espessa."
+    },
+    "cor-ausente": {
+      "name": "A cor ausente",
+      "description": "No Kleurendenken, a via de mudança que ninguém acionou. Costuma ser mais diagnóstica do que a cor dominante."
+    },
+    "paradoxo": {
+      "name": "Paradoxo",
+      "description": "No Frame Creation, a formulação que trava o problema: precisamos de X, mas X impede Y. Passo 2 dos nove."
+    },
+    "campo": {
+      "name": "Campo",
+      "description": "Passo 4: o terreno amplo de atores, valores e forças em volta do problema. No Ponte em Cena, são corpos no campo, não um mapa."
+    },
+    "quadro": {
+      "name": "Quadro (frame)",
+      "description": "Passo 6, o pivô: o novo enquadramento a partir do qual soluções diferentes se tornam possíveis."
+    },
+    "linha-de-captura": {
+      "name": "Linha de captura",
+      "description": "A frase que registra cada intervenção do Teatro Fórum: tentou [ação] apelando a [valor, ator ou alavanca]. Depois se pergunta a que ninguém apelou."
+    }
+  }
+}
