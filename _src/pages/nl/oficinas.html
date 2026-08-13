@@ -29,125 +29,237 @@
 
 <section class="concept" data-section="minuto-a-minuto">
   <div class="wrap">
-    <h2 class="eyebrow">Tweeënhalf uur, minuut voor minuut</h2>
-    <div class="prose" style="margin-bottom:clamp(6px,1vw,10px)">
-      <p>Dit is het ontwerp van <strong>workshop 01</strong>, de workshop die al
-      in pilot draait. Klik op een fase om te zien wat daarin gebeurt.</p>
+    <h2 class="eyebrow">Kies een workshop</h2>
+    <div class="prose" style="margin-bottom:clamp(14px,2vw,20px)">
+      <p>Elke workshop heeft zijn eigen klok. Kies er een om te zien wat er gebeurt, fase voor fase.</p>
     </div>
 
-    <div class="methods timeline" data-panels>
-      <button class="m-tab tl-step" type="button" data-target="tl-aquecimento">
-        <span class="clock">0:00</span><span class="dot" aria-hidden="true"></span>
-        <span class="what">Opwarmen met beelden</span><span class="mins">20 min</span>
-        <span class="tl-bar" aria-hidden="true"><span style="width:13.3%"></span></span>
-      </button>
-      <div class="m-panel tl-panel" id="tl-aquecimento">
-        <div class="row"><span class="lab">Wat er gebeurt</span>
-          <p>Bevroren sculpturen, in stilte, gemaakt van het nieuws van vandaag.
-          De groep bouwt er een, kijkt ernaar, en zet hem één keer in
-          beweging.</p></div>
-        <div class="row"><span class="lab">Wat jij doet</span>
-          <p>Je stapt met je eigen lichaam een beeld in. Niet praten, niet
-          uitleggen.</p></div>
-        <div class="row"><span class="lab">Wat het oplevert</span>
-          <p>De zaal verliest zijn stijfheid voordat er ook maar iets besproken
-          is, en dat is de enige manier waarop dat gesprek daarna iets waard
-          is.</p></div>
+    <div class="wkpick" role="radiogroup" aria-label="Kies een workshop">
+      <input class="wk-vh" type="radio" name="wk" id="wk-1" checked>
+      <input class="wk-vh" type="radio" name="wk" id="wk-2">
+      <input class="wk-vh" type="radio" name="wk" id="wk-3">
+      <div class="wktabs">
+        <label for="wk-1"><span class="n">01</span> Diagnosticeren</label>
+        <label for="wk-2"><span class="n">02</span> Genereren</label>
+        <label for="wk-3"><span class="n">03</span> Beslissen</label>
       </div>
 
-      <button class="m-tab tl-step" type="button" data-target="tl-leitura">
-        <span class="clock">0:20</span><span class="dot" aria-hidden="true"></span>
-        <span class="what">Gekruiste lezing</span><span class="mins">30 min</span>
-        <span class="tl-bar" aria-hidden="true"><span style="width:20%"></span></span>
-      </button>
-      <div class="m-panel tl-panel" id="tl-leitura">
-        <div class="row"><span class="lab">Wat er gebeurt</span>
-          <p>De twee berichten worden om en om gelezen, zin voor zin. De Curinga
-          stopt op de meest geladen momenten en vraagt wat de zaal zag.</p></div>
-        <div class="row"><span class="lab">Wat jij doet</span>
-          <p>Je antwoordt met houding, niet met woorden. Een zin schuurt, het
-          lichaam reageert, en die reactie is voor iedereen zichtbaar.</p></div>
-        <div class="row"><span class="lab">Wat het oplevert</span>
-          <p>Het wordt zichtbaar dat de twee teksten verschillende personages
-          hebben gekozen voor hetzelfde verhaal.</p></div>
+      <div class="wkpane wk-1">
+        <div class="methods timeline" data-panels>
+        <button class="m-tab tl-step" type="button" data-target="tl1-aquecimento">
+          <span class="clock">0:00</span><span class="dot" aria-hidden="true"></span>
+          <span class="what">Opwarmen met beelden</span><span class="mins">20 min</span>
+          <span class="tl-bar" aria-hidden="true"><span style="width:13.3%"></span></span>
+        </button>
+        <div class="m-panel tl-panel" id="tl1-aquecimento">
+          <div class="row"><span class="lab">Wat er gebeurt</span>
+            <p>Bevroren sculpturen, in stilte, gemaakt van het nieuws van vandaag.
+            De groep bouwt er een, kijkt ernaar, en zet hem één keer in
+            beweging.</p></div>
+          <div class="row"><span class="lab">Wat jij doet</span>
+            <p>Je stapt met je eigen lichaam een beeld in. Niet praten, niet
+            uitleggen.</p></div>
+          <div class="row"><span class="lab">Wat het oplevert</span>
+            <p>De zaal verliest zijn stijfheid voordat er ook maar iets besproken
+            is, en dat is de enige manier waarop dat gesprek daarna iets waard
+            is.</p></div>
+        </div>
+
+        <button class="m-tab tl-step" type="button" data-target="tl1-leitura">
+          <span class="clock">0:20</span><span class="dot" aria-hidden="true"></span>
+          <span class="what">Gekruiste lezing</span><span class="mins">30 min</span>
+          <span class="tl-bar" aria-hidden="true"><span style="width:20%"></span></span>
+        </button>
+        <div class="m-panel tl-panel" id="tl1-leitura">
+          <div class="row"><span class="lab">Wat er gebeurt</span>
+            <p>De twee berichten worden om en om gelezen, zin voor zin. De Curinga
+            stopt op de meest geladen momenten en vraagt wat de zaal zag.</p></div>
+          <div class="row"><span class="lab">Wat jij doet</span>
+            <p>Je antwoordt met houding, niet met woorden. Een zin schuurt, het
+            lichaam reageert, en die reactie is voor iedereen zichtbaar.</p></div>
+          <div class="row"><span class="lab">Wat het oplevert</span>
+            <p>Het wordt zichtbaar dat de twee teksten verschillende personages
+            hebben gekozen voor hetzelfde verhaal.</p></div>
+        </div>
+
+        <button class="m-tab tl-step" type="button" data-target="tl1-colagem">
+          <span class="clock">0:50</span><span class="dot" aria-hidden="true"></span>
+          <span class="what">Collage in subgroepen</span><span class="mins">40 min</span>
+          <span class="tl-bar" aria-hidden="true"><span style="width:26.7%"></span></span>
+        </button>
+        <div class="m-panel tl-panel" id="tl1-colagem">
+          <div class="row"><span class="lab">Wat er gebeurt</span>
+            <p>In subgroepen van vier tot zes beantwoordt een collage één vraag:
+            waar landt dit verhaal in ons leven? Daarna loopt iedereen de muren
+            langs, negentig seconden bij elke andere collage.</p></div>
+          <div class="row"><span class="lab">Wat jij doet</span>
+            <p>Knippen, plakken, kiezen. Interpreteren tijdens het maken mag niet,
+            en dat verbod ís de methode: je praat pas als het af is.</p></div>
+          <div class="row"><span class="lab">Wat het oplevert</span>
+            <p>Het materiaal van de workshop. De collages blijven aan de muur en
+            voeden later de lezing in kleuren.</p></div>
+        </div>
+
+        <button class="m-tab tl-step" type="button" data-target="tl1-concretizar">
+          <span class="clock">1:30</span><span class="dot" aria-hidden="true"></span>
+          <span class="what">Het abstracte een lichaam geven</span><span class="mins">25 min</span>
+          <span class="tl-bar" aria-hidden="true"><span style="width:16.7%"></span></span>
+        </button>
+        <div class="m-panel tl-panel" id="tl1-concretizar">
+          <div class="row"><span class="lab">Wat er gebeurt</span>
+            <p>Uit collages komen altijd grote vage woorden: vertrouwen, winning,
+            erbij horen. Hier krijgen ze een lichaam. De Curinga gaat eerst, om te
+            laten zien dat niemand acteur hoeft te zijn.</p></div>
+          <div class="row"><span class="lab">Wat jij doet</span>
+            <p>Je kiest zo'n woord en maakt er een lijfelijk beeld van.</p></div>
+          <div class="row"><span class="lab">Wat het oplevert</span>
+            <p>Woorden die anders langs je heen waren gegaan, worden concrete
+            dingen waarover je het oneens kunt zijn.</p></div>
+        </div>
+
+        <button class="m-tab tl-step" type="button" data-target="tl1-cores">
+          <span class="clock">1:55</span><span class="dot" aria-hidden="true"></span>
+          <span class="what">Lezing in kleuren</span><span class="mins">25 min</span>
+          <span class="tl-bar" aria-hidden="true"><span style="width:16.7%"></span></span>
+        </button>
+        <div class="m-panel tl-panel" id="tl1-cores">
+          <div class="row"><span class="lab">Wat er gebeurt</span>
+            <p>De vijf kleuren van het
+            <a href="{{L}}metodologia/#m-kleurendenken">kleurendenken</a> komen
+            binnen, ter plekke uitgelegd in tien minuten. Elke kleur is een manier
+            waarop verandering gebeurt.</p></div>
+          <div class="row"><span class="lab">Wat jij doet</span>
+            <p>Je beantwoordt drie vragen per scène: welke kleur gebruikt de
+            protagonist, welke de journalist, en welke komt nergens voor. Daarna
+            maak je de vaste zin af: <em>deze situatie lijkt [kleur], maar heeft
+            [kleur] nodig</em>.</p></div>
+          <div class="row"><span class="lab">Wat het oplevert</span>
+            <p>De diagnose. En die zit bijna altijd in de ontbrekende kleur, niet
+            in de dominante.</p></div>
+        </div>
+
+        <button class="m-tab tl-step" type="button" data-target="tl1-fecho">
+          <span class="clock">2:20</span><span class="dot" aria-hidden="true"></span>
+          <span class="what">Slotronde</span><span class="mins">10 min</span>
+          <span class="tl-bar" aria-hidden="true"><span style="width:6.7%"></span></span>
+        </button>
+        <div class="m-panel tl-panel" id="tl1-fecho">
+          <div class="row"><span class="lab">Wat er gebeurt</span>
+            <p>Eén zin per persoon: wat ik meeneem. Geen debat, geen weerwoord,
+            niemand die iemand corrigeert.</p></div>
+          <div class="row"><span class="lab">Wat jij doet</span>
+            <p>Je zegt één keer iets, of je slaat over.</p></div>
+          <div class="row"><span class="lab">Wat het oplevert</span>
+            <p>De sessie sluit zonder in een vergadering te veranderen.</p></div>
+        </div>
+
+        <div class="tl-total">
+          <span class="clock">2:30</span><span aria-hidden="true"></span>
+          <span class="note">Zes fases. De tijden zijn echt en geen optimistische schatting: de materiaalsteward bewaakt de klok, zodat de laatste fase niet door de eerdere wordt opgeslokt.</span>
+        </div>
+        </div>
       </div>
 
-      <button class="m-tab tl-step" type="button" data-target="tl-colagem">
-        <span class="clock">0:50</span><span class="dot" aria-hidden="true"></span>
-        <span class="what">Collage in subgroepen</span><span class="mins">40 min</span>
-        <span class="tl-bar" aria-hidden="true"><span style="width:26.7%"></span></span>
-      </button>
-      <div class="m-panel tl-panel" id="tl-colagem">
-        <div class="row"><span class="lab">Wat er gebeurt</span>
-          <p>In subgroepen van vier tot zes beantwoordt een collage één vraag:
-          waar landt dit verhaal in ons leven? Daarna loopt iedereen de muren
-          langs, negentig seconden bij elke andere collage.</p></div>
-        <div class="row"><span class="lab">Wat jij doet</span>
-          <p>Knippen, plakken, kiezen. Interpreteren tijdens het maken mag niet,
-          en dat verbod ís de methode: je praat pas als het af is.</p></div>
-        <div class="row"><span class="lab">Wat het oplevert</span>
-          <p>Het materiaal van de workshop. De collages blijven aan de muur en
-          voeden later de lezing in kleuren.</p></div>
+      <div class="wkpane wk-2">
+        <div class="methods timeline" data-panels>
+        <button class="m-tab tl-step" type="button" data-target="tl2-arqueologia">
+          <span class="clock">0:00</span><span class="dot" aria-hidden="true"></span>
+          <span class="what">Archeologie van het kader</span><span class="mins">35 min</span>
+          <span class="tl-bar" aria-hidden="true"><span style="width:25.9%"></span></span>
+        </button>
+        <div class="m-panel tl-panel" id="tl2-arqueologia">
+          <div class="row"><span class="lab">Wat er gebeurt</span>
+            <p>In groepen vier vragen: wat is er al geprobeerd, welke twee dingen moeten allebei waar zijn, wie zijn de actoren en wie van hen is het meest onzichtbaar.</p></div>
+          <div class="row"><span class="lab">Wat jij doet</span>
+            <p>Je schrijft de paradox in één zin: we hebben X nodig, maar X verhindert Y.</p></div>
+          <div class="row"><span class="lab">Wat het oplevert</span>
+            <p>Het ruwe materiaal van de scène, en de formulering die hem vastzet.</p></div>
+        </div>
+
+        <button class="m-tab tl-step" type="button" data-target="tl2-cena">
+          <span class="clock">0:35</span><span class="dot" aria-hidden="true"></span>
+          <span class="what">De scène bouwen</span><span class="mins">25 min</span>
+          <span class="tl-bar" aria-hidden="true"><span style="width:18.5%"></span></span>
+        </button>
+        <div class="m-panel tl-panel" id="tl2-cena">
+          <div class="row"><span class="lab">Wat er gebeurt</span>
+            <p>Elke groep kiest een protagonist, een tegenkracht en een setting die de paradox onvermijdelijk maakt. Streeftijd: drie tot vier minuten scène.</p></div>
+          <div class="row"><span class="lab">Wat jij doet</span>
+            <p>Je schrijft de openingszin. Precies die zin wordt aan het eind herschreven.</p></div>
+          <div class="row"><span class="lab">Wat het oplevert</span>
+            <p>Een korte scène die niet oplost, en dat is nu juist de bedoeling.</p></div>
+        </div>
+
+        <button class="m-tab tl-step" type="button" data-target="tl2-forum">
+          <span class="clock">1:00</span><span class="dot" aria-hidden="true"></span>
+          <span class="what">Rondes forumtheater</span><span class="mins">25 min</span>
+          <span class="tl-bar" aria-hidden="true"><span style="width:18.5%"></span></span>
+        </button>
+        <div class="m-panel tl-panel" id="tl2-forum">
+          <div class="row"><span class="lab">Wat er gebeurt</span>
+            <p>De scène draait één keer helemaal. Daarna opnieuw, en het publiek onderbreekt: vier tot zes ingrepen per scène.</p></div>
+          <div class="row"><span class="lab">Wat jij doet</span>
+            <p>Je neemt de plaats van de protagonist in en probeert een andere weg. Of je blijft zitten en kijkt wie het probeert.</p></div>
+          <div class="row"><span class="lab">Wat het oplevert</span>
+            <p>Eén vanglijn per ingreep, in de vaste grammatica: probeerde [handeling] met een beroep op [waarde, actor of hefboom].</p></div>
+        </div>
+
+        <button class="m-tab tl-step" type="button" data-target="tl2-colheita">
+          <span class="clock">1:25</span><span class="dot" aria-hidden="true"></span>
+          <span class="what">Vanglijnen oogsten</span><span class="mins">10 min</span>
+          <span class="tl-bar" aria-hidden="true"><span style="width:7.4%"></span></span>
+        </button>
+        <div class="m-panel tl-panel" id="tl2-colheita">
+          <div class="row"><span class="lab">Wat er gebeurt</span>
+            <p>Alle strookjes gaan naar de muur. Nog geen commentaar.</p></div>
+          <div class="row"><span class="lab">Wat jij doet</span>
+            <p>Je leest in één keer wat de hele zaal heeft geprobeerd.</p></div>
+          <div class="row"><span class="lab">Wat het oplevert</span>
+            <p>Het veld zichtbaar gemaakt: alles wat is geprobeerd, naast elkaar.</p></div>
+        </div>
+
+        <button class="m-tab tl-step" type="button" data-target="tl2-temas">
+          <span class="clock">1:35</span><span class="dot" aria-hidden="true"></span>
+          <span class="what">Thema's</span><span class="mins">20 min</span>
+          <span class="tl-bar" aria-hidden="true"><span style="width:14.8%"></span></span>
+        </button>
+        <div class="m-panel tl-panel" id="tl2-temas">
+          <div class="row"><span class="lab">Wat er gebeurt</span>
+            <p>De lijnen worden geclusterd naar waar ze een beroep op doen. Drie tot vijf clusters, elk met één woord benoemd.</p></div>
+          <div class="row"><span class="lab">Wat jij doet</span>
+            <p>Je clustert, en bent het oneens met hoe de anderen clusterden.</p></div>
+          <div class="row"><span class="lab">Wat het oplevert</span>
+            <p>Stap 5 van Frame Creation, gedaan met wat de zaal opleverde en niet met een kant-en-klare lijst.</p></div>
+        </div>
+
+        <button class="m-tab tl-step" type="button" data-target="tl2-ausencias">
+          <span class="clock">1:55</span><span class="dot" aria-hidden="true"></span>
+          <span class="what">Ontbrekende hefbomen en een nieuw kader</span><span class="mins">20 min</span>
+          <span class="tl-bar" aria-hidden="true"><span style="width:14.8%"></span></span>
+        </button>
+        <div class="m-panel tl-panel" id="tl2-ausencias">
+          <div class="row"><span class="lab">Wat er gebeurt</span>
+            <p>De beslissende vraag: waar deed geen enkele ingreep een beroep op? Uit wat ontbreekt komt een nieuw kader, in de vorm <em>en als dit nu eens geen probleem over X is, maar over Y?</em></p></div>
+          <div class="row"><span class="lab">Wat jij doet</span>
+            <p>Je herschrijft de openingszin van de scène onder het nieuwe kader.</p></div>
+          <div class="row"><span class="lab">Wat het oplevert</span>
+            <p>De test: vraagt de scène nu om andere personages, dan is het kader echt verschoven.</p></div>
+        </div>
+
+        <div class="tl-total">
+          <span class="clock">2:15</span><span aria-hidden="true"></span>
+          <span class="note">Zes fases, 2u15 in de kern en 2u30 met wat lucht. De derde fase geldt per scène, dus het aantal scènes bepaalt wat er overblijft.</span>
+        </div>
+        </div>
       </div>
 
-      <button class="m-tab tl-step" type="button" data-target="tl-concretizar">
-        <span class="clock">1:30</span><span class="dot" aria-hidden="true"></span>
-        <span class="what">Het abstracte een lichaam geven</span><span class="mins">25 min</span>
-        <span class="tl-bar" aria-hidden="true"><span style="width:16.7%"></span></span>
-      </button>
-      <div class="m-panel tl-panel" id="tl-concretizar">
-        <div class="row"><span class="lab">Wat er gebeurt</span>
-          <p>Uit collages komen altijd grote vage woorden: vertrouwen, winning,
-          erbij horen. Hier krijgen ze een lichaam. De Curinga gaat eerst, om te
-          laten zien dat niemand acteur hoeft te zijn.</p></div>
-        <div class="row"><span class="lab">Wat jij doet</span>
-          <p>Je kiest zo'n woord en maakt er een lijfelijk beeld van.</p></div>
-        <div class="row"><span class="lab">Wat het oplevert</span>
-          <p>Woorden die anders langs je heen waren gegaan, worden concrete
-          dingen waarover je het oneens kunt zijn.</p></div>
-      </div>
-
-      <button class="m-tab tl-step" type="button" data-target="tl-cores">
-        <span class="clock">1:55</span><span class="dot" aria-hidden="true"></span>
-        <span class="what">Lezing in kleuren</span><span class="mins">25 min</span>
-        <span class="tl-bar" aria-hidden="true"><span style="width:16.7%"></span></span>
-      </button>
-      <div class="m-panel tl-panel" id="tl-cores">
-        <div class="row"><span class="lab">Wat er gebeurt</span>
-          <p>De vijf kleuren van het
-          <a href="{{L}}metodologia/#m-kleurendenken">kleurendenken</a> komen
-          binnen, ter plekke uitgelegd in tien minuten. Elke kleur is een manier
-          waarop verandering gebeurt.</p></div>
-        <div class="row"><span class="lab">Wat jij doet</span>
-          <p>Je beantwoordt drie vragen per scène: welke kleur gebruikt de
-          protagonist, welke de journalist, en welke komt nergens voor. Daarna
-          maak je de vaste zin af: <em>deze situatie lijkt [kleur], maar heeft
-          [kleur] nodig</em>.</p></div>
-        <div class="row"><span class="lab">Wat het oplevert</span>
-          <p>De diagnose. En die zit bijna altijd in de ontbrekende kleur, niet
-          in de dominante.</p></div>
-      </div>
-
-      <button class="m-tab tl-step" type="button" data-target="tl-fecho">
-        <span class="clock">2:20</span><span class="dot" aria-hidden="true"></span>
-        <span class="what">Slotronde</span><span class="mins">10 min</span>
-        <span class="tl-bar" aria-hidden="true"><span style="width:6.7%"></span></span>
-      </button>
-      <div class="m-panel tl-panel" id="tl-fecho">
-        <div class="row"><span class="lab">Wat er gebeurt</span>
-          <p>Eén zin per persoon: wat ik meeneem. Geen debat, geen weerwoord,
-          niemand die iemand corrigeert.</p></div>
-        <div class="row"><span class="lab">Wat jij doet</span>
-          <p>Je zegt één keer iets, of je slaat over.</p></div>
-        <div class="row"><span class="lab">Wat het oplevert</span>
-          <p>De sessie sluit zonder in een vergadering te veranderen.</p></div>
-      </div>
-
-      <div class="tl-total">
-        <span class="clock">2:30</span><span aria-hidden="true"></span>
-        <span class="note">Zes fases. De tijden zijn echt en geen optimistische
-        schatting: de materiaalsteward bewaakt de klok, zodat de laatste fase niet
-        door de eerdere wordt opgeslokt.</span>
+      <div class="wkpane wk-3">
+        <div class="wk-open">
+          <h3 class="eyebrow" style="margin-bottom:10px">Voor deze is er nog geen klok</h3>
+          <p>De eerste twee workshops liggen vast. De derde niet, en dat is met opzet: de vorm is in co-design met het Consulaat-Generaal, en wie aantreedt kiest met welke Nederlandse methode de workshop over beslissen gaat werken.</p>
+          <p>Wat al vaststaat is de Braziliaanse kant, Wetgevend Theater, en de regel van de zaal: het gezag komt binnen als horizontale deelnemer, en wat de groep maakt kan ergens worden ingediend. De rest schrijven we samen.</p>
+          <p>Zodra de vorm vaststaat, verschijnt hij hier in dezelfde vorm als de andere twee.</p>
+        </div>
       </div>
     </div>
   </div>

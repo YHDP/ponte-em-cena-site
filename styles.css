@@ -338,6 +338,59 @@ section { padding: clamp(44px, 7vw, 88px) 0; }
 .m-tab[aria-expanded="true"] { border-color: var(--gold); background: var(--paper);
   box-shadow: inset 0 0 0 1px var(--gold); }
 
+/* ── Workshop picker (/oficinas/) ────────────────────────────────── */
+/* Radios, not buttons, and no JavaScript. Choosing which of three agendas to
+   read is exactly what a radio group is, so the browser gives us arrow-key
+   navigation, "1 of 3" announcements and a working state for free — none of
+   which a div-with-click would have without being reimplemented. The inputs
+   are clipped rather than display:none so they stay focusable. */
+.wk-vh { position: absolute; width: 1px; height: 1px; margin: -1px;
+  padding: 0; border: 0; clip: rect(0 0 0 0); clip-path: inset(50%);
+  overflow: hidden; white-space: nowrap; }
+
+.wktabs { display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: clamp(16px, 2.4vw, 24px); }
+.wktabs label { display: inline-flex; align-items: baseline; gap: 8px;
+  padding: 9px 16px; border-radius: 999px; cursor: pointer;
+  background: var(--white); border: 1px solid var(--rule);
+  font-family: var(--font-wordmark); font-weight: 700;
+  font-size: clamp(0.82rem, 1.3vw, 0.92rem); color: var(--ink-soft);
+  transition: border-color .16s, color .16s, background .16s; }
+.wktabs label .n { font-size: 0.66rem; letter-spacing: 0.14em;
+  color: var(--gold-text-aa); }
+.wktabs label:hover { border-color: var(--gold); color: var(--ink); }
+
+.wkpane { display: none; }
+
+/* One rule per workshop: the checked radio lights its own label and reveals
+   its own pane. Sibling combinators, so inputs must precede both. */
+#wk-1:checked ~ .wktabs label[for="wk-1"],
+#wk-2:checked ~ .wktabs label[for="wk-2"],
+#wk-3:checked ~ .wktabs label[for="wk-3"] {
+  background: var(--ink); border-color: var(--ink); color: #fff; }
+#wk-1:checked ~ .wktabs label[for="wk-1"] .n,
+#wk-2:checked ~ .wktabs label[for="wk-2"] .n,
+#wk-3:checked ~ .wktabs label[for="wk-3"] .n { color: var(--gold); }
+#wk-1:checked ~ .wk-1,
+#wk-2:checked ~ .wk-2,
+#wk-3:checked ~ .wk-3 { display: block; }
+
+/* The focus ring has to move to the label, since the input it belongs to is
+   clipped out of sight. */
+#wk-1:focus-visible ~ .wktabs label[for="wk-1"],
+#wk-2:focus-visible ~ .wktabs label[for="wk-2"],
+#wk-3:focus-visible ~ .wktabs label[for="wk-3"] {
+  outline: 3px solid var(--gold); outline-offset: 2px; }
+
+/* Workshop 03 has no agenda because it is genuinely still being co-designed.
+   Saying so in the same slot the other two use their schedule is more honest
+   than inventing six plausible phases. */
+.wk-open { padding: clamp(18px, 2.6vw, 26px); background: var(--white);
+  border: 1px dashed var(--ink-muted-aa); border-radius: 12px; }
+.wk-open p { font-size: 0.99rem; line-height: 1.65; color: var(--ink-soft);
+  max-width: 58ch; }
+.wk-open p + p { margin-top: 0.8em; }
+
 /* ── Session timeline (/oficinas/) ───────────────────────────────── */
 /* A schedule you can open. Reuses panels.js wholesale: the JS only needs
    [data-panels] on a root, .m-tab[data-target] buttons and .m-panel[id]
