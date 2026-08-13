@@ -201,7 +201,7 @@ section { padding: clamp(44px, 7vw, 88px) 0; }
      font-size, so a shared 68ch made the h1 box far wider than the paragraph
      box and the two stopped sharing a centre. A rem measure is one width for
      every block on the line. 44rem ~ 66 characters at body size. */
-.prose, .wrap > .eyebrow, figure.diagram figcaption, .tem-mais,
+.prose, .wrap > .eyebrow, .wrap > .cta-row, figure.diagram figcaption, .tem-mais,
 .page-head .kicker, .page-head h1, .page-head .lede, .page-head .wrap > p {
   max-width: var(--measure); margin-inline: auto; }
 .prose p, .prose li { max-width: none; }
@@ -264,14 +264,21 @@ section { padding: clamp(44px, 7vw, 88px) 0; }
   max-width: 18ch; }
 .announce p { font-size: clamp(1rem, 2vw, 1.22rem); color: rgba(255,255,255,0.92);
   max-width: 44ch; margin: 0 auto 18px; line-height: 1.55; }
-.announce .cta { display: inline-block; margin-top: 8px;
+/* Base pill geometry, deliberately NOT scoped to .announce. It used to live
+   under `.announce .cta`, which meant .cta--inline and .cta--go — both of
+   which exist precisely for light grounds — inherited colour but no padding,
+   radius or letter-spacing, and rendered as flat rectangles wherever they
+   appeared outside a green band. The yellow fill stays scoped, because that
+   is the one part that really is announce-only. */
+.cta { display: inline-block; margin-top: 8px;
   font-family: var(--font-wordmark); font-weight: 700;
   font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--ink); background: var(--yellow);
   padding: 12px 24px; border-radius: 999px; text-decoration: none;
   transition: transform .18s, box-shadow .18s; }
-.announce .cta:hover, .announce .cta:focus-visible { transform: translateY(-2px);
+.cta:hover, .cta:focus-visible { transform: translateY(-2px);
   box-shadow: 0 6px 22px rgba(0,0,0,0.18); outline: none; }
+@media (prefers-reduced-motion: reduce) { .cta:hover { transform: none; } }
+.announce .cta { color: var(--ink); background: var(--yellow); }
 /* Secondary action on the green panel. White-on-green is 5.14:1, so the
    outline treatment stays AA without the yellow fill competing for attention. */
 .announce .cta + .cta { margin-left: 10px; }
