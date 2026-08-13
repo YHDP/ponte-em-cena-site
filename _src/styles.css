@@ -338,6 +338,90 @@ section { padding: clamp(44px, 7vw, 88px) 0; }
 .m-tab[aria-expanded="true"] { border-color: var(--gold); background: var(--paper);
   box-shadow: inset 0 0 0 1px var(--gold); }
 
+/* ── Session timeline (/oficinas/) ───────────────────────────────── */
+/* A schedule you can open. Reuses panels.js wholesale: the JS only needs
+   [data-panels] on a root, .m-tab[data-target] buttons and .m-panel[id]
+   panels found by getElementById — nothing requires the buttons to live in
+   one container. So button and panel are INTERLEAVED here, which makes each
+   phase expand directly under the row you clicked instead of below the whole
+   set. That is the fix for a click that looked like it did nothing.
+   HTML rather than SVG so it translates with the page and stays selectable. */
+.timeline { margin-top: clamp(18px, 2.6vw, 26px); }
+
+.tl-step { display: grid; align-items: center;
+  grid-template-columns: 4.2rem 1.1rem minmax(0, 1fr) 4.4rem;
+  gap: clamp(8px, 1.4vw, 14px);
+  width: 100%; border-radius: 10px;
+  border: 1px solid transparent; border-top: 1px solid transparent;
+  background: transparent; padding: clamp(9px, 1.2vw, 12px) clamp(8px, 1.2vw, 14px);
+  text-align: left; font-family: var(--font-wordmark); cursor: pointer;
+  color: var(--ink); transition: background .16s, border-color .16s; }
+.tl-step:hover { background: var(--white); border-color: var(--rule); }
+.tl-step:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.tl-step[aria-expanded="true"] { background: var(--white); border-color: var(--gold);
+  box-shadow: inset 0 0 0 1px var(--gold); }
+
+/* Running clock. Tabular figures so the column does not shimmy. */
+.tl-step .clock { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em;
+  color: var(--gold-text-aa); font-variant-numeric: tabular-nums; }
+/* The dot-and-rule spine. ::after is the connector to the next row; the last
+   step drops it so the line stops at the final phase rather than dangling. */
+.tl-step .dot { position: relative; justify-self: center; width: 11px; height: 11px;
+  border-radius: 50%; background: var(--green); }
+.tl-step .dot::after { content: ""; position: absolute; left: 50%; top: 11px;
+  width: 2px; height: calc(100% + 26px); margin-left: -1px; background: var(--rule); }
+.tl-step:last-of-type .dot::after { display: none; }
+.tl-step[aria-expanded="true"] .dot { background: var(--gold); }
+
+.tl-step .what { font-weight: 700; font-size: clamp(0.94rem, 1.5vw, 1.04rem);
+  letter-spacing: -0.01em; }
+.tl-step .mins { font-family: var(--font-body); font-size: 0.82rem;
+  color: var(--ink-muted-aa); font-variant-numeric: tabular-nums; text-align: right; }
+
+/* Duration bar, width proportional to the phase's share of the 150 minutes.
+   Decorative: the minutes are stated in text right next to it, so the bar
+   carries no information of its own and is hidden from assistive tech. */
+.tl-bar { grid-column: 3 / 5; height: 5px; border-radius: 999px;
+  background: var(--rule); margin-top: 6px; overflow: hidden; }
+.tl-bar span { display: block; height: 100%; border-radius: 999px;
+  background: var(--green); }
+.tl-step[aria-expanded="true"] .tl-bar span { background: var(--gold); }
+
+.tl-panel { padding: clamp(4px, 0.8vw, 8px) 0 clamp(14px, 2vw, 20px)
+  calc(4.2rem + 1.1rem + clamp(16px, 2.8vw, 28px)); }
+.tl-panel .row { margin-bottom: 10px; }
+.tl-panel .row:last-child { margin-bottom: 0; }
+.tl-panel .lab { display: block; font-family: var(--font-wordmark); font-weight: 700;
+  font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gold-text-aa); margin-bottom: 2px; }
+.tl-panel p { font-size: 0.97rem; line-height: 1.6; color: var(--ink-soft);
+  max-width: 58ch; }
+
+/* Total, closing the spine. */
+.tl-total { display: grid; grid-template-columns: 4.2rem 1.1rem minmax(0, 1fr);
+  gap: clamp(8px, 1.4vw, 14px); align-items: baseline;
+  padding: clamp(10px, 1.4vw, 14px) clamp(8px, 1.2vw, 14px) 0;
+  border-top: 1px solid var(--rule); margin-top: clamp(6px, 1vw, 10px);
+  font-family: var(--font-wordmark); }
+.tl-total .clock { font-size: 0.86rem; font-weight: 700; color: var(--ink);
+  font-variant-numeric: tabular-nums; }
+.tl-total .note { grid-column: 3; font-family: var(--font-body); font-size: 0.86rem;
+  color: var(--ink-muted-aa); }
+
+/* Narrow: the clock moves above the label and the spine retires, because a
+   4.2rem gutter plus a 40-character phase name does not fit a phone. */
+@media (max-width: 620px) {
+  .tl-step { grid-template-columns: 1fr auto; gap: 4px 10px; }
+  .tl-step .clock { grid-column: 1; font-size: 0.72rem; }
+  .tl-step .mins { grid-column: 2; grid-row: 1; }
+  .tl-step .dot { display: none; }
+  .tl-step .what { grid-column: 1 / -1; }
+  .tl-bar { grid-column: 1 / -1; }
+  .tl-panel { padding-left: 0; }
+  .tl-total { grid-template-columns: auto 1fr; }
+  .tl-total .note { grid-column: 1 / -1; }
+}
+
 /* Oficina cards on /oficinas/ — same disclosure machinery as the methods
    grid, different face. Each oficina IS the meeting of both sides, so the top
    rule is gold rather than one country's colour; the per-side green/orange
@@ -492,6 +576,13 @@ figure.diagram figcaption b { color: var(--ink-soft); font-weight: 600; }
   font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; }
 .vocab .term.br .side { color: var(--green-dark); }
 .vocab .term.nl .side { color: var(--orange-dark); }
+/* Neutral variant. On this site green means Brazil and orange means the
+   Netherlands, everywhere, including the diagrams. The practical facts on
+   /oficinas/ ("Sala", "Duração") belong to neither side, so borrowing .br/.nl
+   for visual alternation would have them quietly claim a nationality. Gold is
+   the encontro colour and carries no country. */
+.vocab .term.fact { border-top: 3px solid var(--gold); }
+.vocab .term.fact .side { color: var(--gold-text-aa); }
 
 /* ── Oficina cards ───────────────────────────────────────────────── */
 .oficinas { display: grid; gap: clamp(16px, 2.6vw, 26px); grid-template-columns: 1fr; }
