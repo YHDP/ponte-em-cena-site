@@ -192,6 +192,15 @@ function inject(html, block) {
 (async () => {
   if (!existsSync(IG_DIR)) mkdirSync(IG_DIR, { recursive: true });
 
+  // Fixture mode is for local look-and-copy review only. The sample tiles are stamped
+  // AMOSTRA and must never reach the funder-facing domain, which is what happened on
+  // 2026-08-17: the weekly run had no IG_TOKEN, rendered the fixture and committed it.
+  // In CI, no token means no change.
+  if (!TOKEN && process.env.CI) {
+    console.log('No IG_TOKEN in CI: fixture mode is local-only, nothing written.');
+    return;
+  }
+
   const { source, posts } = TOKEN ? await fetchLive() : fetchFixture();
   if (!posts.length) { console.error('No posts to render — aborting (index.html untouched).'); process.exit(1); }
 
