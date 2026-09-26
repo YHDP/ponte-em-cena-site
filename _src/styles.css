@@ -651,3 +651,6 @@ footer .updated { margin-top: clamp(16px, 2.4vw, 22px);
    dropped every page from a11y 100 to 96. The credit stays subordinate through
    its size and position, not through 8% of alpha nobody can see. */
 footer .credit { color: rgba(255,255,255,0.5); }
+
+/* Water-forum call on the home announcement (26-09-2026): a quieter line under the two main CTAs. */
+.announce .forum { margin-top: 28px; font-size: clamp(0.95rem, 1.8vw, 1.08rem); }
